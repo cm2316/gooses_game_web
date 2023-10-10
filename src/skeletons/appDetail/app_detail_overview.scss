@@ -1,0 +1,21 @@
+.skeleton_appDetailOverview {
+  display: flex;
+  flex-direction: column;
+  .skeleton_appDetailOverviewHeader {
+    position: relative;
+  }
+  .skeleton_appDetailOverviewContent {
+    .skeleton_appDetailOverviewContentTitle {
+      margin-block-end: 24px;
+      margin-block-start: 15px;
+      line-height: 25px;
+      height: 25px;
+    }
+    .skeleton_appDetailOverviewContentDesc {
+      line-height: 2;
+      & > div {
+        height: 10px;
+      }
+    }
+  }
+}

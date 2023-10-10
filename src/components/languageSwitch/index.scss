@@ -1,0 +1,17 @@
+.language-switch {
+  border-radius: var(--base-border-radius);
+  height: var(--base-form-height);
+  border: none;
+  outline: none;
+  background: none;
+  color: currentColor;
+  cursor: pointer;
+  // min-width: 80px;
+  width: fit-content;
+
+  option {
+    border: none;
+    outline: none;
+    background-color: var(--header-bg-color);
+  }
+}

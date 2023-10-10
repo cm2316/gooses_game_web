@@ -1,0 +1,17 @@
+.one-text-marquee-bar {
+  position: relative;
+  line-height: 1;
+}
+.one-text-marquee-bar-view {
+  white-space: nowrap;
+  float: left;
+}
+
+@keyframes oneTextAnimation {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}

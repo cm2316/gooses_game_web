@@ -1,0 +1,10 @@
+.skeleton_aspect {
+  position: relative;
+  .skeleton_aspectInner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+  }
+}

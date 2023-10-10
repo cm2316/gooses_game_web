@@ -1,0 +1,37 @@
+.baseRcDialog {
+  .rc-dialog-header .rc-dialog-title {
+    font-size: 20px;
+  }
+  .baseDialogBody {
+    padding: 0 0 24px 0;
+    font-size: 14px;
+  }
+  .baseDialogFooter {
+    &Inner {
+      padding: 5px 0 3px 0;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 12px;
+      .button {
+        width: 128px;
+        font-size: 16px;
+        line-height: 1;
+        border-radius: var(--base-border-radius);
+        .loadingButtonImg {
+          height: 1em;
+        }
+      }
+    }
+  }
+  &.isCenter {
+    .baseDialogBody {
+      text-align: center;
+    }
+    .baseDialogFooter {
+      &Inner {
+        justify-content: center;
+      }
+    }
+  }
+}

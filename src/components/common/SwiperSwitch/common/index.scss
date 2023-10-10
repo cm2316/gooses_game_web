@@ -1,0 +1,23 @@
+$namespace: swiper-switch;
+.#{$namespace}-container {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  font-size: 14px;
+  .#{$namespace}-icon {
+    &:not(.disabled) {
+      @include iconAnimation(1.07);
+      cursor: pointer;
+    }
+    min-width: 2em;
+    min-height: 2em;
+    outline-offset: 0px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include btnBg($color: $switchBgColorChange);
+    @include btnBg($color: $switchColorChange, $attr: color);
+    transition: all 0.2s ease-in-out;
+  }
+}

@@ -1,0 +1,72 @@
+.light {
+  --primary-color: #1a9fffff;
+  --primary-color-hover: #4cb5ffff;
+  --primary-color-focus: #4cb5ffff;
+  --primary-color-active: #0086e5ff;
+  --primary-color-disabled: #003c66ff;
+
+  --success-color: #7fcc66ff;
+  --success-color-hover: #87e467ff;
+  --success-color-focus: #87e467ff;
+  --success-color-active: #75ba5eff;
+  --success-color-disabled: #2b4224ff;
+
+  --warning-color: #ffd500ff;
+  --warning-color-hover: #ffdd33;
+  --warning-color-focus: #ffdd33;
+  --warning-color-active: #ccaa00;
+  --warning-color-disabled: #aa9900;
+
+  --danger-color: #ff3333ff;
+  --danger-color-hover: #ff4c4dff;
+  --danger-color-focus: #ff4c4dff;
+  --danger-color-active: #f20d0dff;
+  --danger-color-disabled: #5f0103ff;
+
+  --pink-color: #e83e98;
+  --pink-color-hover: #fc62a9ff;
+  --pink-color-focus: #fc62a9ff;
+  --pink-color-active: #e83e8cff;
+  --pink-color-disabled: #893a5eff;
+
+  // background-color
+  --background-color: #fff;
+
+  // TextColor
+  --text-color: rgb(0, 0, 0);
+  --regular-text-color: rgba(0, 0, 0, 0.8);
+  --regular-text-color: rgba(0, 0, 0, 0.6);
+  // ScrollColor(滚动条)
+  --scroll-color: rgb(153 153 153 /50%);
+  --scroll-hover-color: rgb(153 153 153 /80%);
+  // radius(圆角)
+  --base-border-radius: 4px;
+  --medium-border-radius: 8px;
+  --larger-border-radius: 12px;
+
+  // header
+  --header-bg-color: rgba(0, 0, 0, 0.6);
+  --text-color: #fff;
+  --overlay-color: rgba(255, 255, 255, 0.7);
+  --header-height: 70px;
+
+  // switch icon
+  --switch-bg-color: var(--warning-color);
+  --switch-bg-color-hover: var(--warning-color-hover);
+  --switch-bg-color-focus: var(--warning-color-focus);
+  --switch-bg-color-active: var(--warning-color-active);
+  --switch-bg-color-disabled: #5c4e01;
+
+  --switch-color: #0b0c0e;
+  --switch-color-hover: #5c4e01;
+  --switch-color-focus: #5c4e01;
+  --switch-color-active: #5c4e01;
+  --switch-color-disabled: #ccaa00;
+
+  // Link color
+  --primary-color: var(--warning-color);
+  --primary-color-hover: var(--warning-color-hover);
+  --primary-color-focus: var(--warning-color-focus);
+  --primary-color-active: var(--warning-color-active);
+  --primary-color-disabled: #5c4e01;
+}

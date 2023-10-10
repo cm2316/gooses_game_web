@@ -1,0 +1,35 @@
+.skeleton_appBanner {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  .skeleton_appBannerLeft {
+    width: 158px;
+    height: 158px;
+  }
+  .skeleton_appBannerRight {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  .skeleton_appBannerTitle {
+    height: 48px;
+    // margin: 5px 0;
+    vertical-align: middle;
+    width: 430px;
+  }
+  .skeleton_appBannerSubTitle {
+    height: 24px;
+    width: 250px;
+    margin-bottom: 8px;
+  }
+  .skeleton_appBannerActions {
+    display: flex;
+    gap: 20px;
+    > span {
+      height: 48px;
+      flex: 1;
+      max-width: 310px;
+    }
+  }
+}

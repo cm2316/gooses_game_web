@@ -1,0 +1,29 @@
+.skeleton_baseDesc {
+  line-height: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 24px;
+  .skeleton_baseDescWrap {
+    display: flex;
+    flex-direction: column;
+  }
+  .skeleton_baseDescSubTitle {
+    height: 14px;
+    width: 200px;
+  }
+  .skeleton_baseDescTitle {
+    height: 39px;
+    margin: 0;
+    width: 400px;
+  }
+  .skeleton_baseDescActions {
+    display: flex;
+    gap: 10px;
+    > span {
+      height: 48px;
+      flex: 1;
+      max-width: 190px;
+    }
+  }
+}

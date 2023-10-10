@@ -1,0 +1,68 @@
+$imagePlaceholderColor: var(--overlay-color);
+
+$primaryColorChange: (
+  var(--primary-color),
+  var(--primary-color-hover),
+  var(--primary-color-focus),
+  var(--primary-color-active),
+  var(--primary-color-disabled)
+);
+$successColorChange: (
+  var(--success-color),
+  var(--success-color-hover),
+  var(--success-color-focus),
+  var(--success-color-active),
+  var(--success-color-disabled)
+);
+$dangerColorChange: (
+  var(--danger-color),
+  var(--danger-color-hover),
+  var(--danger-color-focus),
+  var(--danger-color-active),
+  var(--danger-color-disabled)
+);
+$pinkColorChange: (
+  var(--pink-color),
+  var(--pink-color-hover),
+  var(--pink-color-focus),
+  var(--pink-color-active),
+  var(--pink-color-disabled)
+);
+$warningColorChange: (
+  var(--warning-color),
+  var(--warning-color-hover),
+  var(--warning-color-focus),
+  var(--warning-color-active),
+  var(--warning-color-disabled)
+);
+
+$switchBgColorChange: (
+  var(--switch-bg-color),
+  var(--switch-bg-color-hover),
+  var(--switch-bg-color-focus),
+  var(--switch-bg-color-active),
+  var(--switch-bg-color-disabled)
+);
+$switchColorChange: (
+  var(--switch-color),
+  var(--switch-color-hover),
+  var(--switch-color-focus),
+  var(--switch-color-active),
+  var(--switch-color-disabled)
+);
+
+$linkColorChange: (
+  var(--primary-color),
+  var(--primary-color-hover),
+  var(--primary-color-focus),
+  var(--primary-color-active),
+  var(--primary-color-disabled)
+);
+
+$whiteColorChange: (
+  var(--white-button-color),
+  var(--white-button-color-hover),
+  var(--white-button-color-focus),
+  var(--white-button-color-active),
+  var(--white-button-color-disabled)
+);

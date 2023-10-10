@@ -1,0 +1,13 @@
+.skeleton_appDetail {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  overflow: hidden;
+  overflow-y: auto;
+  .skeleton_appDetail_item {
+    height: 296px;
+    .defaultImge {
+      background-size: 30% 30%;
+    }
+  }
+}

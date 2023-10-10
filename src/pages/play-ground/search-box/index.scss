@@ -1,0 +1,30 @@
+.play-ground-search-box {
+  gap: 20px;
+  color: var(--text-color);
+  height: 100%;
+  .search-box--input {
+    position: relative;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--base-border-color);
+    border-radius: var(--base-border-radius);
+    input {
+      padding: 12px 20px;
+      padding-left: 40px;
+      background-color: transparent;
+      width: 100%;
+      outline: none;
+      font-size: var(--medium-font-size);
+      color: var(--text-color);
+      &:focus {
+        border-color: var(--primary-color);
+      }
+    }
+    .search-box--icon {
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: var(--medium-font-size);
+    }
+  }
+}

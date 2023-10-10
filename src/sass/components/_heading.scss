@@ -1,0 +1,17 @@
+.heading {
+  color: var(--text-color);
+  &.pageHeading {
+    @include font-size(18);
+    @include font-weight(400);
+  }
+
+  &.sectionHeading {
+    @include font-size(20);
+    @include font-weight(500);
+  }
+
+  &.largeHeading {
+    @include font-size(28);
+    @include font-weight(600);
+  }
+}

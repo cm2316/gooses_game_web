@@ -1,0 +1,27 @@
+.dark {
+  --primary-color: #d24bff;
+  --primary-color-hover: #e186ff;
+  --primary-color-active: #bf00ff;
+  --primary-color-disabled: #7c498d;
+  // background-color
+  --background-color: #141414;
+  --overlay-color: #1d1e1f;
+  --page-color: #0a0a0a;
+
+  // TextColor
+  --text-color: #e5eaf3;
+  --regular-text-color: #cfd3dc;
+  --secondary-text-color: #a3a6ad;
+  --placeholder-text-color: #8d9095;
+  --disabled-text-color: #6c6e72;
+
+  // BorderColor
+  --base-border-color: #4c4d4f;
+  --light-border-color: #58585b;
+  --lighter-border-color: #636466;
+  --dark-border-color: #414243;
+  --darker-border-color: #363637;
+  // ScrollColor(滚动条)
+  --scroll-color: rgb(153 153 153 /50%);
+  --scroll-hover-color: rgb(153 153 153 /80%);
+}

@@ -1,0 +1,41 @@
+// SectionCarousel
+$namespance: section-carousel;
+
+.#{$namespance}-container {
+  border-radius: var(--medium-border-radius);
+  overflow: hidden;
+  position: relative;
+  .#{$namespance}-header {
+    position: absolute;
+    z-index: 100;
+    left: 44px;
+    right: 64px;
+    top: 44px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    .#{$namespance}-headerTitle {
+      font-size: 28px;
+      line-height: 40px;
+      color: #fff;
+    }
+    @include scope(wine-red-dark) {
+      .swiper-switch-container .swiper-switch-icon {
+        @include btnBg(
+          $color: (
+            #fff,
+            nth($switchColorChange, 2),
+            nth($switchColorChange, 3),
+            nth($switchColorChange, 4),
+            nth($switchColorChange, 5),
+          ),
+          $attr: color
+        );
+      }
+    }
+  }
+  .#{$namespance}-item {
+    height: 360px;
+  }
+}

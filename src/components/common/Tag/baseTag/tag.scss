@@ -1,0 +1,23 @@
+.baseTag-container {
+  padding: 7px 17px;
+  border-radius: 60px;
+  background: #2e3344;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-basis: auto;
+  width: max-content;
+  line-height: 1;
+  cursor: pointer;
+  &:hover,
+  &.active {
+    box-shadow: 0px 4px 20px 0px rgba(244, 208, 0, 0.6);
+    @include scope(wine-red-dark) {
+      box-shadow: 0px 4px 20px 0px rgba(#ff3333, 0.6);
+    }
+    border: 1px solid var(--primary-color);
+  }
+}

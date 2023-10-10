@@ -1,0 +1,12 @@
+.baseHeader {
+  height: var(--header-height);
+  line-height: 1;
+  background-color: var(--header-bg-color);
+  &.pageHeading,
+  &.sectionHeading {
+    // line-height: 50px;
+  }
+  &.pageHeading {
+    // padding-top: 0;
+  }
+}

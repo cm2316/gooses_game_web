@@ -1,0 +1,94 @@
+// 颜色
+.c-white {
+  color: white;
+}
+
+$spaceamounts: (
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  10,
+  12,
+  15,
+  16,
+  18,
+  20,
+  24,
+  25,
+  28,
+  30,
+  32,
+  35,
+  40,
+  50,
+  60,
+  70,
+  100
+); // Adjust this to include the pixel amounts you need.
+$sides: (top, bottom, left, right); // Leave this variable alone
+
+@each $space in $spaceamounts {
+  @each $side in $sides {
+    .margin-#{$side}-#{$space} {
+      margin-#{$side}: #{$space}px;
+    }
+
+    .padding-#{$side}-#{$space} {
+      padding-#{$side}: #{$space}px;
+    }
+  }
+}
+
+$widthSize: (
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20,
+  30,
+  40,
+  50,
+  60,
+  70,
+  80,
+  90,
+  100
+);
+
+@each $space in $widthSize {
+  $size: $space * 10;
+
+  .w#{$size} {
+    width: $size * 1px;
+  }
+
+  .minw#{$size} {
+    min-width: $size * 1px;
+  }
+}
+
+.w265 {
+  width: 265px;
+}
+
+$fontSizes: (10, 12, 13, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40);
+
+@each $size in $fontSizes {
+  .font#{$size} {
+    font-size: #{$size}px;
+  }
+}

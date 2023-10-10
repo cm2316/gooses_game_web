@@ -1,0 +1,161 @@
+@use 'sass:math';
+
+@mixin themify($themes: $themes) {
+  @each $theme, $map in $themes {
+    .#{$theme} & {
+      $theme-map: () !global;
+
+      @each $key, $submap in $map {
+        $value: map-get(map-get($themes, $theme), '#{$key}');
+        $theme-map: map-merge(
+          $theme-map,
+          (
+            $key: $value,
+          )
+        ) !global;
+      }
+
+      @content;
+      $theme-map: null !global;
+    }
+  }
+}
+
+@mixin abs-position($top: 0, $right: 0, $bottom: 0, $left: 0) {
+  position: absolute;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+@mixin center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin keyframe($animation_name) {
+  @keyframes #{$animation_name} {
+    @content;
+  }
+}
+
+@include keyframe(spin) {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@include keyframe(toggle) {
+  from {
+    transform: translateY(0px);
+  }
+
+  to {
+    transform: translateY(20px);
+  }
+}
+
+@mixin apply-aspect-ratio($width, $height) {
+  padding-top: 100% * math.div($height, $width);
+}
+
+@mixin relative-pos {
+  position: relative;
+}
+
+@mixin font-size($sizeValue: 16) {
+  font-size: $sizeValue + px;
+}
+
+@mixin font-weight($sizeValue: 400) {
+  font-weight: $sizeValue;
+}
+
+@mixin ellipsis($width: 100%) {
+  max-width: $width;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin square($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin bgSize($width, $height) {
+  background-size: $width $height;
+}
+
+@mixin btnBg($color, $amount: 6%, $attr: background-color, $valuePre: null) {
+  $colorValue: $color;
+
+  // 三态色值变化
+  @if type-of($value: $colorValue) ==list {
+    #{$attr}: $valuePre nth($colorValue, 1);
+
+    &:hover {
+      #{$attr}: $valuePre nth($colorValue, 2);
+    }
+
+    &:focus-visible {
+      #{$attr}: $valuePre nth($colorValue, 3);
+    }
+
+    &:active {
+      #{$attr}: $valuePre nth($colorValue, 4);
+    }
+
+    &.disabled {
+      #{$attr}: $valuePre nth($colorValue, 5);
+      pointer-events: none;
+    }
+  } @else {
+    // 色值固定变化
+    #{$attr}: $valuePre $colorValue;
+
+    @if type-of($value: $colorValue) ==color {
+      &:hover,
+      &:focus-visible {
+        #{$attr}: $valuePre lighten($colorValue, $amount);
+      }
+
+      &:active {
+        #{$attr}: $valuePre darken($colorValue, $amount);
+      }
+    } @else {
+      &:hover,
+      &:focus-visible {
+        #{$attr}: $valuePre $colorValue;
+      }
+
+      &:active {
+        #{$attr}: $valuePre $colorValue;
+      }
+    }
+  }
+}
+
+@mixin iconAnimation($scale: 1.05, $time: 0.2s) {
+  & {
+    transition: all $time ease-in-out;
+    transform-origin: center center;
+  }
+
+  &:hover {
+    transform: scale($scale);
+    @content;
+  }
+}
+
+@mixin scope($scopeName) {
+  .#{$scopeName} & {
+    @content;
+  }
+}

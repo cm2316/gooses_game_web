@@ -1,0 +1,14 @@
+.refresh-icon {
+  font-size: 30px;
+  cursor: pointer;
+  // margin-left: 10px;
+  // @include iconAnimation;
+  @include btnBg($color: #ffffffcc, $attr: color);
+  display: inline-block;
+  line-height: 1;
+  background-color: transparent;
+  padding: 0;
+  @include scope(wine-red-dark) {
+    @include btnBg($color: $switchColorChange, $attr: color);
+  }
+}

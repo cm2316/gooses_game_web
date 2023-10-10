@@ -1,0 +1,13 @@
+.commonBannerWrap-container {
+  display: flex;
+  flex-direction: column;
+  .cloudGameBannerHeader-container,
+  .premiumGameBannerHeader-container {
+    flex: 1;
+  }
+  .skeleton_homeBanner {
+    display: flex;
+    align-items: center;
+    flex: 1;
+  }
+}

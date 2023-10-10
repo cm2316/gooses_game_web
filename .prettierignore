@@ -1,0 +1,6 @@
+/build/*
+/node_modules/**
+**/*.svg
+**/*.sh
+public/*
+src/json/**
