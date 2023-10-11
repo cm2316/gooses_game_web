@@ -77,9 +77,12 @@ body,
     line-height: 1;
     transition: all 0.2s ease-in-out;
   }
-  &:hover {
+  &:hover,
+  &:active {
     &.icon-text {
-      background-color: var(--overlay-color);
+      // background-color: var(--overlay-color);
+      background-color: rgba(255, 255, 255, 0.1);
+      color: #fff;
     }
   }
 }

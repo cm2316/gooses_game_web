@@ -23,7 +23,7 @@
     "react-router-dom": "^6.4.5",
     "redux-thunk": "^2.3.0",
     "store": "^2.0.12",
-    "swiper": "^8.0.7",
+    "swiper": "^10.3.1",
     "use-immer": "^0.5.1"
   },
   "scripts": {
