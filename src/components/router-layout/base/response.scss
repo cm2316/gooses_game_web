@@ -1,0 +1,20 @@
+@media screen and (max-width: 800px) {
+  .base-nav,
+  .base-search,
+  .base-language {
+    display: none;
+  }
+  .base-search {
+    .base-search--inner {
+      & > div {
+        border-radius: 30px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .base-layout--mobile {
+    display: none;
+  }
+}

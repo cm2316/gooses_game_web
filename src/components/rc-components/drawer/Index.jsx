@@ -1,7 +1,7 @@
 import React, { useImperativeHandle, useState } from 'react'
 import Drawer from 'rc-drawer'
 import 'rc-drawer/assets/index.css'
-import SvgIcon from '@/components/common/SvgIcon/SvgIcon'
+import SvgIcon from '@/components/common/svg-icon/Index'
 import motionProps from './motion'
 import './index.scss'
 

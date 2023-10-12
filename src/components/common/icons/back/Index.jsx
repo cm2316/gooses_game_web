@@ -1,5 +1,5 @@
 import React from 'react'
-import SvgIcon from '@/components/common/SvgIcon/SvgIcon'
+import SvgIcon from '@/components/common/svg-icon/Index'
 import { FormattedMessage } from 'react-intl'
 import classNames from 'classnames'
 import './index.scss'

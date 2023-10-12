@@ -1,7 +1,7 @@
 import React from 'react'
 import { useIntl } from 'react-intl'
 import RcTooltip from '@/components/rc-components/tooltip/Index'
-import SvgIcon from '@/components/common/SvgIcon/SvgIcon'
+import SvgIcon from '@/components/common/svg-icon/Index'
 import './refreshIcon.scss'
 const RefreshIcon = ({ onRefresh, titleId = 'shuffleTip' }) => {
   const intl = useIntl()

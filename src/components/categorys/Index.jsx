@@ -4,9 +4,9 @@
 
 import React from 'react'
 import { useSelector } from 'react-redux'
-import BaseTagList from '@/components/common/Tag/baseTag/List'
-import BaseTag from '@/components/common/Tag/baseTag/Index'
-import AspectImage from '@/components/common/Image/AspectImage'
+import BaseTagList from '@/components/common/tag/base-tag/List'
+import BaseTag from '@/components/common/tag/base-tag/Index'
+import AspectImage from '@/components/common/image/AspectImage'
 import classNames from 'classnames'
 import iconMap from './iconMap'
 import './index.scss'

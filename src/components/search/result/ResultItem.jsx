@@ -1,12 +1,9 @@
-import React, { useMemo, useCallback, useRef } from 'react'
-import { useIntl } from 'react-intl'
-import AspectImage from '@/components/common/Image/AspectImage'
-import Button from '@/components/common/Button/Button'
+import React, { useCallback, useRef } from 'react'
+import AspectImage from '@/components/common/image/AspectImage'
 import { onGameClickAction } from '@/actions/commonActions'
 import style from './resultItem.module.scss'
 import classNames from 'classnames'
 const ResultItem = ({ app, keyword, as = 'div', ...props }) => {
-  const intl = useIntl()
   const containerRef = useRef(null)
   /**
    * On click app event

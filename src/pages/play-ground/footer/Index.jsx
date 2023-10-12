@@ -1,8 +1,8 @@
 import React from 'react'
 import classNames from 'classnames'
-import SvgIcon from '@/components/common/SvgIcon/SvgIcon'
-import './index.scss'
 import { useFullscreen } from 'ahooks'
+import SvgIcon from '@/components/common/svg-icon/Index'
+import './index.scss'
 const PlayGroundFooter = ({ className }) => {
   const [, { toggleFull }] = useFullscreen(() => document.querySelector('.playGround--body'))
   return (

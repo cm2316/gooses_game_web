@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import React from 'react'
-import SvgIcon from '@/components/common/SvgIcon/SvgIcon'
-import FormattedText from '@/components/common/FormattedText/Index'
+import SvgIcon from '@/components/common/svg-icon/Index'
+import FormattedText from '@/components/common/formatted-text/Index'
 
 import './header.scss'
 

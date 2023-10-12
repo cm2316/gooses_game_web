@@ -3,7 +3,7 @@ import classNames from 'classnames'
 
 import RcDialog from 'rc-dialog'
 
-import Button from '@/components/common/Button/Button'
+import Button from '@/components/common/button/Index'
 import './index.scss'
 
 const BaseDialog = (

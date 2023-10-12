@@ -3,8 +3,7 @@ import { useSelector } from 'react-redux'
 import HomeBanner from './components/banner/Index'
 import { useGridBaseCount } from '@/hook/useViewport'
 // import Categorys from './components/categorys/Index'
-import GameSwiper from './components/swiper/Index'
-import SectionCarousel from '@/components/AdvertisementSection/SectionCarousel'
+import SectionCarousel from '@/components/advertisement-section/Index'
 
 import './index.scss'
 // 记录页面的状态

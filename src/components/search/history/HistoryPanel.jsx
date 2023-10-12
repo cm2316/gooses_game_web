@@ -1,16 +1,14 @@
 import React, { useImperativeHandle, useCallback, useRef, useState } from 'react'
 import { useIntl } from 'react-intl'
-import { useSelector } from 'react-redux'
-import SvgIcon from '@/components/common/SvgIcon/SvgIcon'
+import SvgIcon from '@/components/common/svg-icon/Index'
 import { getHistorys, addHistory, removeHistory, clearHistory } from './history'
 import useKeyboardFocus from '@/hook/useKeyboardFocus'
 import style from './historyPanel.module.scss'
-import headerStyle from '../popularAppsList/index.module.scss'
+import headerStyle from './header.module.scss'
 import { useEffect } from 'react'
 const HistoryPanel = ({ onClick, disabled = false, onChange }, ref) => {
   const intl = useIntl()
   const containerRef = useRef(null)
-  const popularApps = useSelector((state) => state.app.suggestedApps)
   const [historys, setHistorys] = useState([])
   const { focusIndex, fId, onKeyDown } = useKeyboardFocus({
     count: historys.length,

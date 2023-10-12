@@ -1,12 +1,10 @@
 import { useLocation, useRoutes } from 'react-router-dom'
 import React, { Suspense } from 'react'
 import KeepAlive from 'react-activation'
-import Layout from '@/components/common/RouterLayout/base/Base'
-import ErrorFallback from '@/components/ErrorFallback/ErrorFallback'
+import Layout from '@/components/router-layout/base/Base'
+import ErrorFallback from '@/components/error-fallback/Index'
 
 const Home = React.lazy(() => import('@/pages/home/Index'))
-const Apps = React.lazy(() => import('@/pages/apps/Index'))
-const Category = React.lazy(() => import('@/pages/apps/ByTopicApps'))
 const PlayGround = React.lazy(() => import('@/pages/play-ground/Index'))
 
 export const routes = [
@@ -17,23 +15,8 @@ export const routes = [
     children: [
       {
         index: true,
-        keepAlive: true,
+        keepAlive: false,
         component: Home,
-      },
-      {
-        path: 'hot-apps',
-        keepAlive: true,
-        component: Apps,
-      },
-      {
-        path: 'new-apps',
-        keepAlive: true,
-        component: Apps,
-      },
-      {
-        path: 'category',
-        keepAlive: true,
-        component: Category,
       },
     ],
   },

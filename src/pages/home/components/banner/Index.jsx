@@ -1,33 +1,17 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import { onGameClickAction } from '@/actions/commonActions'
-import BannerAppList from '@/components/banner/bannerWrap/bannerlist/Index'
+import BannerAppList from '@/components/banner/banner-wrap/banner-list/Index'
 import SkeletonGameList from '@/skeletons/GameList'
 import classNames from 'classnames'
-const CloudGameBanner = ({ gridCount, className }) => {
+const HomeBanner = ({ gridCount, className }) => {
   const apps = useSelector((state) => state.app.html5) || []
   const loadingStore = useSelector((state) => state.loading)
-
-  // 打开游戏
-  const onClick = (app) => {
-    onGameClickAction({
-      app,
-    })
-  }
-  const onMouseEnter = (app) => {}
-  const onMouseLeave = () => {}
 
   return (
     <div className={classNames(['home-banner', className])}>
       {apps.length > 0 ? (
         <>
-          <BannerAppList
-            onClick={onClick}
-            list={apps}
-            gridCount={gridCount}
-            onMouseEnter={onMouseEnter}
-            onMouseLeave={onMouseLeave}
-          />
+          <BannerAppList list={apps} gridCount={gridCount} />
         </>
       ) : (
         <>
@@ -44,4 +28,4 @@ const CloudGameBanner = ({ gridCount, className }) => {
   )
 }
 
-export default CloudGameBanner
+export default HomeBanner

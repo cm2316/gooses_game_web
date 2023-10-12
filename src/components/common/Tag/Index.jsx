@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import classNames from 'classnames'
-import AspectImage from '@/components/common/Image/AspectImage'
+import AspectImage from '@/components/common/image/AspectImage'
 import './index.scss'
 const Tag = ({ tag, ...props }) => {
   const [isLoad, setIsLoaded] = useState(false)
