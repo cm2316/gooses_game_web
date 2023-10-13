@@ -1,0 +1,16 @@
+self.__RSC_CSS_MANIFEST={
+  "__entry_css_mods__": {
+    "C:\\Users\\NoManReady\\Documents\\GitHub\\gooses_game_web\\src\\app\\tasks\\page": [
+      "C:\\Users\\NoManReady\\Documents\\GitHub\\gooses_game_web\\node_modules\\.pnpm\\next@13.2.4_react-dom@18.2.0_react@18.2.0\\node_modules\\next\\font\\google\\target.css?{\"path\":\"src\\\\components\\\\ThemeRegistry\\\\theme.js\",\"import\":\"Roboto\",\"arguments\":[{\"weight\":[\"300\",\"400\",\"500\",\"700\"],\"subsets\":[\"latin\"],\"display\":\"swap\"}],\"variableName\":\"roboto\"}"
+    ],
+    "C:\\Users\\NoManReady\\Documents\\GitHub\\gooses_game_web\\src\\app\\starred\\page": [
+      "C:\\Users\\NoManReady\\Documents\\GitHub\\gooses_game_web\\node_modules\\.pnpm\\next@13.2.4_react-dom@18.2.0_react@18.2.0\\node_modules\\next\\font\\google\\target.css?{\"path\":\"src\\\\components\\\\ThemeRegistry\\\\theme.js\",\"import\":\"Roboto\",\"arguments\":[{\"weight\":[\"300\",\"400\",\"500\",\"700\"],\"subsets\":[\"latin\"],\"display\":\"swap\"}],\"variableName\":\"roboto\"}"
+    ],
+    "C:\\Users\\NoManReady\\Documents\\GitHub\\gooses_game_web\\src\\app\\page": [
+      "C:\\Users\\NoManReady\\Documents\\GitHub\\gooses_game_web\\node_modules\\.pnpm\\next@13.2.4_react-dom@18.2.0_react@18.2.0\\node_modules\\next\\font\\google\\target.css?{\"path\":\"src\\\\components\\\\ThemeRegistry\\\\theme.js\",\"import\":\"Roboto\",\"arguments\":[{\"weight\":[\"300\",\"400\",\"500\",\"700\"],\"subsets\":[\"latin\"],\"display\":\"swap\"}],\"variableName\":\"roboto\"}"
+    ]
+  },
+  "C:\\Users\\NoManReady\\Documents\\GitHub\\gooses_game_web\\src\\app\\layout.js": [
+    "C:\\Users\\NoManReady\\Documents\\GitHub\\gooses_game_web\\node_modules\\.pnpm\\next@13.2.4_react-dom@18.2.0_react@18.2.0\\node_modules\\next\\font\\google\\target.css?{\"path\":\"src\\\\components\\\\ThemeRegistry\\\\theme.js\",\"import\":\"Roboto\",\"arguments\":[{\"weight\":[\"300\",\"400\",\"500\",\"700\"],\"subsets\":[\"latin\"],\"display\":\"swap\"}],\"variableName\":\"roboto\"}"
+  ]
+}
