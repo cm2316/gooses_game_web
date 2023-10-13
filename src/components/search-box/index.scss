@@ -5,8 +5,6 @@
   .search-box--input {
     position: relative;
     background: rgba(255, 255, 255, 0.1);
-    border: 1px solid var(--base-border-color);
-    border-radius: var(--base-border-radius);
     input {
       padding: 12px 20px;
       padding-left: 40px;
@@ -15,6 +13,8 @@
       outline: none;
       font-size: var(--medium-font-size);
       color: var(--text-color);
+      border-radius: var(--base-border-radius);
+      border: 1px solid var(--base-border-color);
       &:focus {
         border-color: var(--primary-color);
       }

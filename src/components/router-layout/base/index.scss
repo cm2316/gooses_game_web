@@ -55,6 +55,9 @@
   .base-nav--mobile {
     flex-direction: column;
   }
+  .base-language {
+    font-size: var(--base-font-size);
+  }
   .base-search {
     height: 39px;
     position: relative;

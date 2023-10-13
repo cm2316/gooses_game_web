@@ -41,7 +41,7 @@ const Header = ({ className }) => {
           <Search />
         </div>
       </div>
-      <div className='base-language text--clickable'>
+      <div className='base-language'>
         <LanguageSwitch language={language} />
       </div>
       {/* mobile */}
