@@ -69,6 +69,7 @@ jobs:
           echo ${{steps.version_step.outputs.version}}
           echo ${{env.VERSION_TAG}}
           echo ${{env.LASTEST_TAG}}
+          echo ${{env.ENV_PARAM}}
           # cd gooses_game_api
           # 使用Dockerfile构建镜像
           # docker build . --file Dockerfile --tag registry.cn-hangzhou.aliyuncs.com/goose_game/gooses_game_api:${{env.VERSION_TAG}}
