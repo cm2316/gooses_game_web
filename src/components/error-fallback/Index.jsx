@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { FormattedMessage } from 'react-intl'
-import Button from '@/components/common/Button/Index'
+// import Button from '@/components/common/Button/Index'
 import ErrorIcon from './error.png'
 import Utils from '@/Utils'
 
@@ -38,12 +38,12 @@ class ErrorFallback extends Component {
           <div className='loading-error-text margin-top-20'>
             <FormattedMessage id='loadingError'></FormattedMessage>
           </div>
-          <Button
-            type='primary'
-            className='margin-top-20'
-            titleId='refresh'
-            onClick={() => handleTryAgainClick()}
-          />
+          {/*<Button*/}
+          {/*  type='primary'*/}
+          {/*  className='margin-top-20'*/}
+          {/*  titleId='refresh'*/}
+          {/*  onClick={() => handleTryAgainClick()}*/}
+          {/*/>*/}
         </div>
       )
     }
