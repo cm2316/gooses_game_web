@@ -8,7 +8,8 @@ COPY package.json ./
 COPY yarn.lock ./
 RUN yarn  install
 COPY . /app
-RUN yarn build:${ENV_PARAM}
+#RUN yarn build:${ENV_PARAM}
+RUN yarn build
 # STAGE 2
 FROM nginx:stable-alpine
 COPY --from=build /app/build /usr/share/nginx/html
