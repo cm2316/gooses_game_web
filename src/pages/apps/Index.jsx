@@ -1,7 +1,7 @@
 import React from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
-import GamePageHeader from '@/components/common/heading/space-between/Index'
+import GamePageHeader from '@/components/common/Heading/space-between/Index'
 import GameVirsualLayout from '@/components/layout/virsual-app-grid-layout/Index'
 import { useGridBaseCount } from '@/hook/useViewport'
 

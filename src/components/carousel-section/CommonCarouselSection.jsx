@@ -4,7 +4,7 @@
 
 import React, { useCallback, useMemo } from 'react'
 import Carousel from '@/components/Carousel/Index'
-import BaseHeader from '@/components/common/heading/BaseHeader'
+import BaseHeader from '@/components/common/Heading/BaseHeader'
 import ViewAllButton from '@/components/adapter/viewAllButton/Index'
 import Link from '@/components/common/router/Link'
 import RefreshIcon from '@/components/Carousel/components/RefreshIcon'

@@ -3,7 +3,7 @@
  */
 import React from 'react'
 import classnames from 'classnames'
-import BaseHeader from '@/components/common/heading/BaseHeader'
+import BaseHeader from '@/components/common/Heading/BaseHeader'
 import VirtualList from '@/components/common/virtual-list/Index'
 
 import './index.scss'

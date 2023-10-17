@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { FormattedMessage } from 'react-intl'
-import Button from '@/components/common/button/Index'
+import Button from '@/components/common/Button/Index'
 import ErrorIcon from './error.png'
 import Utils from '@/Utils'
 

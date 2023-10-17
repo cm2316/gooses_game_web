@@ -6,7 +6,7 @@ import classnames from 'classnames'
 import Scrollload from '@/components/scrollload/Index'
 import useScrollBarActive from '@/hook/useScrollBarActive'
 import ErrorFallback from '@/components/error-fallback/Index'
-import BaseHeader from '@/components/common/heading/BaseHeader'
+import BaseHeader from '@/components/common/Heading/BaseHeader'
 
 import './index.scss'
 

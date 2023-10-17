@@ -1,5 +1,5 @@
 import React from 'react'
-import AspectImage from '@/components/common/image/AspectImage'
+import AspectImage from '@/components/common/Image/AspectImage'
 
 const Core = ({
   src,

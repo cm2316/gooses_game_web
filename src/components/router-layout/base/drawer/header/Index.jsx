@@ -1,8 +1,8 @@
 import React from 'react'
 import Logo from '@/images/logo.png'
-import Image from '@/components/common/image/Index'
+import Image from '@/components/common/Image/Index'
 import SvgIcon from '@/components/common/svg-icon/Index'
-import SpaceBetweenHeader from '@/components/common/heading/space-between/Index'
+import SpaceBetweenHeader from '@/components/common/Heading/space-between/Index'
 import './index.scss'
 const DrawerHeader = ({ onClose }) => {
   return (

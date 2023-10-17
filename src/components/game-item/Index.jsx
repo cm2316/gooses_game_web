@@ -1,5 +1,5 @@
 import React from 'react'
-import AspectImage from '@/components/common/image/AspectImage'
+import AspectImage from '@/components/common/Image/AspectImage'
 import { onGameClickAction } from '@/actions/commonActions'
 import useNarrorClick from '@/hook/useNarrorClick'
 import './index.scss'

@@ -1,12 +1,12 @@
 import React, { useState, useRef } from 'react'
 import classNames from 'classnames'
 import Logo from '@/images/logo-full.png'
-import Image from '@/components/common/image/Index'
+import Image from '@/components/common/Image/Index'
 import SvgIcon from '@/components/common/svg-icon/Index'
 import PlayGroundSearchBox from '@/components/search-box/Index'
 import RcDrawer from '@/components/rc-components/drawer/Index'
 import ErrorFallback from '@/components/error-fallback/Index'
-import SpaceBetweenHeader from '@/components/common/heading/space-between/Index'
+import SpaceBetweenHeader from '@/components/common/Heading/space-between/Index'
 import './index.scss'
 const PlayGroundHeader = ({ className }) => {
   const drawerRef = useRef()

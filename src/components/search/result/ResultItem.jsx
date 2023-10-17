@@ -1,5 +1,5 @@
 import React, { useCallback, useRef } from 'react'
-import AspectImage from '@/components/common/image/AspectImage'
+import AspectImage from '@/components/common/Image/AspectImage'
 import { onGameClickAction } from '@/actions/commonActions'
 import style from './resultItem.module.scss'
 import classNames from 'classnames'
