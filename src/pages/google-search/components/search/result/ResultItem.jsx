@@ -1,7 +1,7 @@
 import React, { useMemo, useCallback, useRef } from 'react'
 import { useSelector } from 'react-redux'
 import { useIntl } from 'react-intl'
-import AspectImage from '@/components/common/Image/AspectImage'
+import AspectImage from '@/components/common/image/AspectImage'
 import Button from '@/components/common/button/Index'
 import { onGameClickAction } from '@/actions/commonActions'
 import style from './resultItem.module.scss'

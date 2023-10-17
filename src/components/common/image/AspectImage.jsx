@@ -1,5 +1,5 @@
 import React from 'react'
-import Image from '@/components/common/Image/Index'
+import Image from '@/components/common/image/Index'
 import AspectContainer from '@/components/common/aspect-container/Index'
 
 const AspectImage = ({ aspectClass, className, children, ...props }) => {

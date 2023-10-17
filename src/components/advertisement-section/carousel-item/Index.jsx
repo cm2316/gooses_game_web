@@ -1,6 +1,6 @@
 import React from 'react'
 import classNames from 'classnames'
-import AspectImage from '@/components/common/Image/AspectImage'
+import AspectImage from '@/components/common/image/AspectImage'
 import './index.scss'
 const Advertisement = ({ app, imgPlaceholderClass, className }) => {
   return (

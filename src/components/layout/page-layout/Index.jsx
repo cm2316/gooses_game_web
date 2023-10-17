@@ -1,6 +1,6 @@
 import React, { useRef, useImperativeHandle } from 'react'
 import classNames from 'classnames'
-import BaseHeader from '@/components/common/Heading/BaseHeader'
+import BaseHeader from '@/components/common/heading/BaseHeader'
 import BackIcon from '@/components/common/icons/back/Index'
 
 import useScrollBarActive from '@/hook/useScrollBarActive'

@@ -1,12 +1,12 @@
 import React from 'react'
-import AspectImage from '@/components/common/Image/AspectImage'
+import AspectImage from '@/components/common/image/AspectImage'
 
 const Core = ({
   src,
   app,
   imageLayoutRender,
   imgPlaceholderClass,
-  // Image
+  // image
   lazy,
   lazyRoot,
   lazyRootMargin,
