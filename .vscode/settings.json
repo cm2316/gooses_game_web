@@ -1,0 +1,9 @@
+{
+  "nuxt.isNuxtApp": false,
+  "i18n-ally.localesPaths": ["src/json/i18n"],
+  "i18n-ally.keystyle": "flat",
+  "vue.features.codeActions.enable": false,
+  "typescript.tsdk": "node_modules\\.pnpm\\typescript@5.0.3\\node_modules\\typescript\\lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "git.ignoreLimitWarning": true
+}

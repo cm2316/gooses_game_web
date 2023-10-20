@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
+  reactStrictMode: false,
   swcMinify: true,
   modularizeImports: {
     "@mui/icons-material": {
@@ -16,9 +16,6 @@ const nextConfig = {
         pathname: "/random",
       },
     ],
-  },
-  experimental: {
-    appDir: true,
   },
 };
 
