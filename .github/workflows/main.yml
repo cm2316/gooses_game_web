@@ -1,6 +1,8 @@
 name: go-docker
 
-on: [push]
+on: 
+  push:
+    branches: [ ant-prod ]
 
 jobs:
 #  test:
