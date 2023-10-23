@@ -13,11 +13,13 @@ export default function Player({ params }: { params: { appId: string } }) {
   });
   return (
     <div
-      className="h-full flex justify-center"
+      id="GameContainer"
+      className="h-full flex justify-center bg-slate-950 opacity-90"
       style={{
         backgroundImage: `url(${app?.tile})`,
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
+        backgroundPosition: 'center center',
       }}
     >
       <iframe
