@@ -31,6 +31,7 @@ const nextConfig = {
     // ],
     domains: ['cdn.game520.online'],
   },
+  output: 'standalone',
 };
 
 module.exports = nextConfig;
