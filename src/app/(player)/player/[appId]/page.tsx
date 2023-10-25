@@ -1,22 +1,13 @@
-'use client';
 import AppService from '@/services/apps/service';
-import type { AppItem } from '@/services/apps/types/AppItem';
-import { useState } from 'react';
-import { useQuery } from 'react-query';
-export default function Player({ params }: { params: { appId: string } }) {
+export default async function Player({ params }: { params: { appId: string } }) {
   const { appId } = params;
-  const [app, setApp] = useState<AppItem>();
-  const { isFetching } = useQuery(['getAppById', appId], () => AppService.getById(appId), {
-    onSuccess(res) {
-      setApp(res.data);
-    },
-  });
+  const { data: appItem } = await AppService.getByIdMemo(appId);
   return (
     <div
       id="GameContainer"
       className="h-full flex justify-center bg-slate-950 opacity-90"
       style={{
-        backgroundImage: `url(${app?.tile})`,
+        backgroundImage: `url(${appItem.tile})`,
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
         backgroundPosition: 'center center',
@@ -25,7 +16,7 @@ export default function Player({ params }: { params: { appId: string } }) {
       <iframe
         sandbox="allow-scripts allow-popups allow-same-origin allow-pointer-lock"
         allow="clipboard-write"
-        src={app?.playUrl}
+        src={appItem.playUrl}
         allowFullScreen={true}
         width={'100%'}
         height={'100%'}

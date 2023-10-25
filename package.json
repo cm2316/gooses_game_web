@@ -14,12 +14,14 @@
     "ahooks": "^3.7.8",
     "antd": "^5.10.1",
     "axios": "^1.5.1",
+    "classnames": "^2.3.2",
     "immer": "^10.0.3",
     "next": "13.5.6",
     "react": "^18",
     "react-dom": "^18",
     "react-infinite-scroll-component": "^6.1.0",
     "react-query": "^3.39.3",
+    "sass": "^1.69.4",
     "use-immer": "^0.9.0"
   },
   "devDependencies": {

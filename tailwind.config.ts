@@ -1,6 +1,12 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
-  theme: {},
+  theme: {
+    extend: {
+      aspectRadio: {
+        '9/16': '9 / 16',
+      },
+    },
+  },
   plugins: [],
 };

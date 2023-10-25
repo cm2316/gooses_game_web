@@ -18,9 +18,14 @@ const nextConfig = {
         : false,
   },
   poweredByHeader: false,
-  async rewrites() {
-    return [];
-  },
+  // async rewrites() {
+  //   return [
+  //     {
+  //       source: '/api/:path*',
+  //       destination: `https://www.game520.online/api/:path*`,
+  //     },
+  //   ];
+  // },
   images: {
     // remotePatterns: [
     //   {

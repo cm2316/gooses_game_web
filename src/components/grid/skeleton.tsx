@@ -9,7 +9,7 @@ export default function AppGridSkeleton(props: AppGridSkeletonProps) {
     <Row gutter={[12, 12]}>
       {Array.from({ length: props.count }).map((app, index) => {
         return (
-          <Col xs={12} sm={8} md={6} lg={4} xl={4} xxl={3} key={index}>
+          <Col xs={12} sm={8} md={6} lg={4} key={index}>
             <Card
               hoverable
               cover={

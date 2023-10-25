@@ -1,16 +1,14 @@
+'use client';
 import { ExpandOutlined } from '@ant-design/icons';
 import { useFullscreen } from 'ahooks';
-import { Button, LayoutProps, Tooltip } from 'antd';
-import { JSX, RefAttributes } from 'react';
-export default function BaseFooter(
-  props: JSX.IntrinsicAttributes & LayoutProps & RefAttributes<HTMLElement>,
-) {
+import { Button, Tooltip } from 'antd';
+export default function BaseFooter() {
   const [fullscreen, { enterFullscreen }] = useFullscreen(() =>
     document.getElementById('PlayerContainer'),
   );
   return (
     <div className="flex justify-end items-center px-6 py-2 opacity-80">
-      <Tooltip title="Click Fullscreen Player" align={{ targetOffset: [0, 15] }}>
+      <Tooltip title="Click Fullscreen Player">
         <Button
           type="text"
           shape="circle"

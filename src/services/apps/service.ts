@@ -1,26 +1,40 @@
 import request from '@/request';
+import fetcher, { getSearchParams } from '@/request/fetcher';
+import React from 'react';
 import { AppItemResponse } from './types/AppItem';
 import { AppListRequest } from './types/ListRequest';
 import { AppListResponse } from './types/ListResponse';
-
+export const revalidate = 3600;
+enum Pathname {
+  List = '/game/list',
+  GetById = '/game/get',
+}
 export default class AppService {
-  static list = (params: AppListRequest): Promise<AppListResponse> => {
+  static list = (params?: AppListRequest): Promise<AppListResponse> => {
     return request({
-      url: '/game/list',
+      url: Pathname.List,
       params,
-      headers: {
-        'x-gooses': '5ce0a277-faf3-4c52-87fe-603b381ce798',
-      },
     });
+  };
+
+  static listMemo = async (params?: AppListRequest) => {
+    const res = await fetcher<AppListResponse>(
+      `${process.env.NEXT_PUBLIC_API_DOMAIN}${Pathname.List}?${getSearchParams(params as any)}`,
+    );
+    return res;
   };
 
   static getById = (id: string): Promise<AppItemResponse> => {
     return request({
-      url: '/game/get',
+      url: Pathname.GetById,
       params: { id },
-      headers: {
-        'x-gooses': '5ce0a277-faf3-4c52-87fe-603b381ce798',
-      },
     });
   };
+
+  static getByIdMemo = React.cache(async (id: string) => {
+    const res = await fetcher<AppItemResponse>(
+      `${process.env.NEXT_PUBLIC_API_DOMAIN}${Pathname.GetById}?${getSearchParams({ id })}`,
+    );
+    return res;
+  });
 }

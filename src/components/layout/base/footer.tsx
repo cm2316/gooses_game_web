@@ -1,14 +1,11 @@
-import { Layout, LayoutProps } from 'antd';
+'use client';
 import Link from 'next/link';
-import { JSX, RefAttributes } from 'react';
-export default function BaseFooter(
-  props: JSX.IntrinsicAttributes & LayoutProps & RefAttributes<HTMLElement>,
-) {
+export default function BaseFooter() {
   return (
-    <Layout.Footer className="flex justify-center items-center" {...props}>
+    <footer className="flex justify-center items-center py-3 px-6">
       <Link href="/">
         <span style={{ color: '#999' }}>www.game520.online</span>
       </Link>
-    </Layout.Footer>
+    </footer>
   );
 }
