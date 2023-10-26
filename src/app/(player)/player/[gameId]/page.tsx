@@ -1,7 +1,7 @@
 import AppService from '@/services/apps/service';
-export default async function Player({ params }: { params: { appId: string } }) {
-  const { appId } = params;
-  const { data: appItem } = await AppService.getByIdMemo(appId);
+export default async function Player({ params }: { params: { gameId: string } }) {
+  const { gameId } = params;
+  const { data: appItem } = await AppService.getByIdMemo(gameId);
   return (
     <div
       id="GameContainer"
