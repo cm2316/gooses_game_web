@@ -14,17 +14,18 @@ export async function generateStaticParams() {
 }
 
 export default async function CategoryGames({ params }: { params: { category: string } }) {
+  const decodeCategory = decodeURI(params.category);
   const query = {
     pageSize: 24,
     current: 1,
-    category: params.category,
+    category: decodeCategory,
   };
   const { data: categoryGames } = await AppService.listMemo(query);
   return (
     <>
       <section className="container text-center my-32 mx-auto">
         <h1 className={classNames([styles.title, 'pb-4', 'mb-4', 'font-medium', 'text-slate-700'])}>
-          Play {params.category} Games online
+          Play {decodeCategory} Games online
         </h1>
         <p className="text-lg text-slate-500">
           Enjoy a lag-free and high-quality gaming experience while playing games online with
@@ -42,7 +43,7 @@ export default async function CategoryGames({ params }: { params: { category: st
           query={query}
           num={categoryGames.data?.length}
         >
-          Show {params.category} More Games
+          Show {decodeCategory} More Games
         </ShowMoreButton>
       </section>
     </>
