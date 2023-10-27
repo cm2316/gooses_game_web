@@ -42,7 +42,7 @@ const nextConfig = {
     //     pathname: '**',
     //   },
     // ],
-    domains: ['cdn.game520.online'],
+    domains: ['cdn.game520.online', 'img.gamedistribution.com', 'img.gamemonetize.com'],
   },
   output: 'standalone',
 };

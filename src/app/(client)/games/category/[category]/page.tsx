@@ -3,9 +3,19 @@ import ShowMoreButton from '@/components/section/show-more';
 import AppService from '@/services/apps/service';
 import classNames from 'classnames';
 import styles from './index.module.scss';
+
+export async function generateStaticParams() {
+  const categorys = await AppService.getCategorys();
+  return categorys.data.map((category) => {
+    return {
+      category,
+    };
+  });
+}
+
 export default async function CategoryGames({ params }: { params: { category: string } }) {
   const query = {
-    pageSize: 18,
+    pageSize: 24,
     current: 1,
     category: params.category,
   };
@@ -17,20 +27,20 @@ export default async function CategoryGames({ params }: { params: { category: st
           Play {params.category} Games online
         </h1>
         <p className="text-lg text-slate-500">
-          Play {params.category} Games online instantly without downloading. Enjoy a lag-free and
-          high-quality gaming experience while playing games online with game520.online
+          Enjoy a lag-free and high-quality gaming experience while playing games online with
+          game520.online
         </p>
       </section>
 
       <section className="container mx-auto mb-8">
-        <GridList linkTarget="_blank" apps={categoryGames.data} />
+        <GridList linkTarget="_blank" apps={categoryGames.data || []} />
       </section>
       <section className="container mx-auto text-center">
         <ShowMoreButton
           ghost={false}
           total={categoryGames.total}
           query={query}
-          num={categoryGames.data.length}
+          num={categoryGames.data?.length}
         >
           Show {params.category} More Games
         </ShowMoreButton>

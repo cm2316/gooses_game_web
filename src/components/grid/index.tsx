@@ -15,7 +15,7 @@ export default function Index({ apps, linkTarget }: { apps: AppItem[]; linkTarge
                   <Image
                     placeholder="blur"
                     blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNsrm+1AAAE1QHBsN4A3AAAAABJRU5ErkJggg=="
-                    src={app.icon}
+                    src={app.thumb}
                     alt=""
                     sizes="100%"
                     loading="lazy"
@@ -23,7 +23,7 @@ export default function Index({ apps, linkTarget }: { apps: AppItem[]; linkTarge
                   />
                 </div>
                 <div className="text-slate-700 py-2">
-                  <h3 className="truncate text-base w-full font-medium">{app.appName}</h3>
+                  <h3 className="truncate text-base w-full font-medium">{app.title}</h3>
                   <span className="text-sm">{app.category}</span>
                 </div>
               </div>

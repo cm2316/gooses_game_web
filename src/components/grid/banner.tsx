@@ -11,21 +11,17 @@ export default function Index({ apps, linkTarget }: { apps: AppItem[]; linkTarge
           <Col xs={24} sm={12} md={8} lg={6} key={app.id}>
             <Link href={`/player/${app.id}`} target={linkTarget}>
               <div className="border p-1 border-transparent rounded-md hover:border-purple-500 hover:shadow-xl shadow-purple-500/50 transition-shadow">
-                <div className="w-full aspect-video relative rounded overflow-hidden">
+                <div className="w-full aspect-[4/3] relative rounded overflow-hidden">
                   <Image
                     placeholder="blur"
                     blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNsrm+1AAAE1QHBsN4A3AAAAABJRU5ErkJggg=="
-                    src={app.banner}
+                    src={app.thumb}
                     alt=""
                     sizes="100%"
                     loading="lazy"
                     fill
                   />
                 </div>
-                {/* <div className="text-slate-700 py-2">
-                  <h3 className="truncate text-base w-full font-medium">{app.appName}</h3>
-                  <span className="text-sm">{app.category}</span>
-                </div> */}
               </div>
             </Link>
           </Col>

@@ -4,24 +4,23 @@ export default async function Player({ params }: { params: { gameId: string } })
   const { data: appItem } = await AppService.getByIdMemo(gameId);
   return (
     <div
-      id="GameContainer"
       className="h-full flex justify-center bg-slate-950 opacity-90"
       style={{
-        backgroundImage: `url(${appItem.tile})`,
+        backgroundImage: `url(${appItem.thumb})`,
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
         backgroundPosition: 'center center',
       }}
     >
-      <iframe
-        sandbox="allow-scripts allow-popups allow-same-origin allow-pointer-lock"
-        allow="clipboard-write"
-        src={appItem.playUrl}
-        allowFullScreen={true}
-        width={'100%'}
-        height={'100%'}
-        className="max-w-5xl"
-      ></iframe>
+      <div style={{ aspectRatio: `${appItem.width / appItem.height}` }} className="h-full">
+        <iframe
+          allow="clipboard-write"
+          src={appItem.url}
+          allowFullScreen={true}
+          height={'100%'}
+          width={'100%'}
+        ></iframe>
+      </div>
     </div>
   );
 }

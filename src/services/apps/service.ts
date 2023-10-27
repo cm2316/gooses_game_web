@@ -1,13 +1,15 @@
 import request from '@/request';
 import fetcher, { getSearchParams } from '@/request/fetcher';
-import React from 'react';
+import { BaseResponse } from '@/types/BaseResponse';
 import { AppItemResponse } from './types/AppItem';
 import { AppListRequest } from './types/ListRequest';
 import { AppListResponse } from './types/ListResponse';
 export const revalidate = 3600;
 enum Pathname {
-  List = '/game/list',
-  GetById = '/game/get',
+  List = '/gamehtml5/list',
+  GetById = '/gamehtml5/get',
+  Collections = '/gamehtml5/collection',
+  Categorys = '/gamehtml5/category',
 }
 export default class AppService {
   static list = (params?: AppListRequest): Promise<AppListResponse> => {
@@ -31,10 +33,36 @@ export default class AppService {
     });
   };
 
-  static getByIdMemo = React.cache(async (id: string) => {
+  static getByIdMemo = async (id: string) => {
     const res = await fetcher<AppItemResponse>(
       `${process.env.NEXT_PUBLIC_API_DOMAIN}${Pathname.GetById}?${getSearchParams({ id })}`,
     );
     return res;
-  });
+  };
+
+  static getCollections = async (): Promise<BaseResponse<string[]>> => {
+    return request({
+      url: Pathname.Collections,
+    });
+  };
+
+  static getCollectionsMemo = async () => {
+    const res = await fetcher<BaseResponse<string[]>>(
+      `${process.env.NEXT_PUBLIC_API_DOMAIN}${Pathname.Collections}`,
+    );
+    return res;
+  };
+
+  static getCategorys = async (): Promise<BaseResponse<string[]>> => {
+    return request({
+      url: Pathname.Categorys,
+    });
+  };
+
+  static getCategorysMemo = async () => {
+    const res = await fetcher<BaseResponse<string[]>>(
+      `${process.env.NEXT_PUBLIC_API_DOMAIN}${Pathname.Categorys}`,
+    );
+    return res;
+  };
 }

@@ -1,7 +1,7 @@
 'use client';
 import { AppItem } from '@/services/apps/types/AppItem';
 import { LeftOutlined, RightOutlined } from '@ant-design/icons';
-import { Button } from 'antd';
+import { Button, Divider, Space } from 'antd';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
@@ -18,23 +18,31 @@ function AppSlider({ app }: { app: AppItem }) {
   function goPlay() {
     router.push(`/player/${app.id}`);
   }
+
   return (
     <div
       className="h-96 rounded-lg bg-no-repeat bg-cover overflow-hidden"
-      style={{ backgroundImage: `url(${app.banner})` }}
+      style={{ backgroundImage: `url(${app.asset[app.asset.length - 1]})` }}
     >
       <div className="h-full flex items-end p-9 bg-gradient-to-t from-black/90 from-0% via-black/20 via-40% to-black/0 to-50% bg-center">
         <div className="flex gap-8 text-slate-100">
-          <Image src={app.icon} width={150} height={150} alt="" className="rounded" />
-          <div className="flex flex-col gap-2 justify-end">
-            <h1 className="text-2xl font-medium">{app.appName}</h1>
-            <Link
-              className="text-lg text-white/80 hover:underline hover:text-white/80"
-              href={`/games/${app.category}`}
-            >
-              {app.category}
-            </Link>
-            <Button type="primary" size="large" onClick={goPlay}>
+          <Image src={app.asset[1]} width={150} height={150} alt="" className="rounded" />
+          <div className="flex flex-col gap-2 justify-end items-start">
+            <h1 className="text-2xl font-medium">{app.title}</h1>
+            <Space size={0} split={<Divider type="vertical" className="bg-white/70" />}>
+              {app.category.map((category, index) => {
+                return (
+                  <Link
+                    key={`${category}-${index}`}
+                    className="text-lg text-white/80 hover:underline hover:text-white underline"
+                    href={`/games/category/${category}`}
+                  >
+                    {category}
+                  </Link>
+                );
+              })}
+            </Space>
+            <Button type="primary" size="large" onClick={goPlay} className="w-40">
               Play Now
             </Button>
           </div>
