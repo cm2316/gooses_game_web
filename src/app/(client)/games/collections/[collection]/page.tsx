@@ -4,14 +4,14 @@ import AppService from '@/services/apps/service';
 import classNames from 'classnames';
 import styles from './index.module.scss';
 
-export async function generateStaticParams() {
-  const collections = await AppService.getCollectionsMemo();
-  return collections.data.map((collection) => {
-    return {
-      collection,
-    };
-  });
-}
+// export async function generateStaticParams() {
+//   const collections = await AppService.getCollectionsMemo();
+//   return collections.data.map((collection) => {
+//     return {
+//       collection,
+//     };
+//   });
+// }
 
 export default async function CollectionGames({ params }: { params: { collection: string } }) {
   const decodeCollection = decodeURI(params.collection);
