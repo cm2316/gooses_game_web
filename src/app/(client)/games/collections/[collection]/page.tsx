@@ -5,7 +5,7 @@ import classNames from 'classnames';
 import styles from './index.module.scss';
 
 export async function generateStaticParams() {
-  const collections = await AppService.getCollections();
+  const collections = await AppService.getCollectionsMemo();
   return collections.data.map((collection) => {
     return {
       collection,
