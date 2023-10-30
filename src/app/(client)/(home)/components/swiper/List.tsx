@@ -9,7 +9,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import { Autoplay, Navigation } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
-export interface HomeGameBannerProps {
+export interface GameBannerSwiperProps {
   apps: AppItem[];
 }
 
@@ -18,15 +18,16 @@ function AppSlider({ app }: { app: AppItem }) {
   function goPlay() {
     router.push(`/player/${app.id}`);
   }
-
+  const tile = app.tile || app.asset[app.asset.length - 1];
+  const icon = app.icon || app.asset[1];
   return (
     <div
-      className="h-96 rounded-lg bg-no-repeat bg-cover overflow-hidden"
-      style={{ backgroundImage: `url(${app.asset[app.asset.length - 1]})` }}
+      className="h-96 rounded-lg bg-no-repeat bg-cover overflow-hidden bg-center"
+      style={{ backgroundImage: `url(${tile})` }}
     >
-      <div className="h-full flex items-end p-9 bg-gradient-to-t from-black/90 from-0% via-black/20 via-40% to-black/0 to-50% bg-center">
+      <div className="h-full flex items-end p-9 bg-gradient-to-t from-black/90 from-0% via-black/20 via-40% to-black/0 to-50%">
         <div className="flex gap-8 text-slate-100">
-          <Image src={app.asset[1]} width={150} height={150} alt="" className="rounded" />
+          <Image src={icon} width={150} height={150} alt="" className="rounded hidden sm:block" />
           <div className="flex flex-col gap-2 justify-end items-start">
             <h1 className="text-2xl font-medium">{app.title}</h1>
             <Space size={0} split={<Divider type="vertical" className="bg-white/70" />}>
@@ -35,7 +36,7 @@ function AppSlider({ app }: { app: AppItem }) {
                   <Link
                     key={`${category}-${index}`}
                     className="text-lg text-white/80 hover:underline hover:text-white underline"
-                    href={`/games/category/${category}`}
+                    href={`/games/categorys/${category}`}
                   >
                     {category}
                   </Link>
@@ -51,7 +52,7 @@ function AppSlider({ app }: { app: AppItem }) {
     </div>
   );
 }
-export default function HomeGameBanner(props: HomeGameBannerProps) {
+export default function GameBannerSwiper(props: GameBannerSwiperProps) {
   return (
     <div className="relative rounded-lg overflow-hidden">
       <Swiper

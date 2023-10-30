@@ -1,5 +1,5 @@
-import BaseFooter from '@/components/layout/base/footer';
-import BaseHeader from '@/components/layout/base/header';
+import BaseFooter from '@/components/layout/base/BaseFooter';
+import BaseHeader from '@/components/layout/base/BaseHeader';
 import { Layout } from 'antd';
 export default function ClientLayout({ children }: { children: React.ReactNode }) {
   return (

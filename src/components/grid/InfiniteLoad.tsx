@@ -1,5 +1,5 @@
 'use client';
-import Placeholder from '@/components/base/placeholder';
+import Placeholder from '@/components/base/Placeholder';
 import AppService from '@/services/apps/service';
 import type { AppItem } from '@/services/apps/types/AppItem';
 import { AppListRequest } from '@/services/apps/types/ListRequest';

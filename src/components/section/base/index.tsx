@@ -1,9 +1,10 @@
 import classNames from 'classnames';
+import { ReactNode } from 'react';
 import styles from './index.module.scss';
 export interface BaseSectionProps {
   title: string;
-  children?: React.JSX.Element;
-  className?: string | Array<string>;
+  children: ReactNode;
+  className?: classNames.ArgumentArray;
 }
 export default function BaseSection(props: BaseSectionProps) {
   return (

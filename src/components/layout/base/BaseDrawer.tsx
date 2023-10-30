@@ -1,12 +1,12 @@
 'use client';
-import AppGrid from '@/components/grid/infinite';
+import AppGrid from '@/components/grid/InfiniteLoad';
 import { AppItem } from '@/services/apps/types/AppItem';
 import { SearchOutlined } from '@ant-design/icons';
 import { Button, Drawer, Input } from 'antd';
 import { useRouter } from 'next/navigation';
 import { useRef, useState } from 'react';
 
-export default function SearchDrawer() {
+export default function BaseSearchDrawer() {
   const [loading, setLoading] = useState(false);
   const [total, setTotal] = useState(-1);
   const appGridRef = useRef<any>();

@@ -27,10 +27,10 @@ instance.interceptors.response.use(
           message.error(err.response.data.message);
           break;
         default:
-          message.error('系统错误，请稍后再试');
+          message.error('System error, please try again later.');
       }
     } else {
-      message.error('网络错误，请稍后再试');
+      message.error('Network error, please try again later.');
     }
     return Promise.reject(err);
   },

@@ -24,6 +24,10 @@ export interface AppItem {
   width: number;
   // 游戏封面
   thumb: string;
+  // 大封面
+  tile: string;
+  // icon小图
+  icon: string;
   // 游戏地址
   url: string;
   // 资源列表

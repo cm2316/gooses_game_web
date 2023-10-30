@@ -1,49 +1,59 @@
-import GridBannerList from '@/components/grid/banner';
-import GridList from '@/components/grid/index';
-import BaseSection from '@/components/section/base';
+import GridList from '@/components/grid/AspectGrid';
+import BaseSection from '@/components/section/base/Index';
 import AppService from '@/services/apps/service';
-import Link from 'next/link';
-import HomeGameBanner from './components/game-banner';
+import GameCategorys from './components/categorys/List';
+import GameCollections from './components/collections/List';
+import GameSwiperList from './components/swiper/List';
 
 export const revalidate = 3600;
 export default async function Home() {
-  const { data: hotGames } = await AppService.listMemo({ pageSize: 6, collection: 'Hot' });
-  const { data: halloweenGamesRest } = await AppService.listMemo({
+  const hotGamesPromise = AppService.listMemo({ pageSize: 6, collection: 'Hot' });
+  const halloweenGamesPromise = AppService.listMemo({
     pageSize: 12,
     collection: 'Halloween',
   });
-  const { data: newestGames } = await AppService.listMemo({ pageSize: 12, collection: 'Newest' });
-  const { data: bestGames } = await AppService.listMemo({
+  const newestGamesPromise = AppService.listMemo({ pageSize: 12, collection: 'Newest' });
+  const bestGamesPromise = AppService.listMemo({
     pageSize: 48,
     collection: 'Best Games',
   });
 
-  const { data: collections } = await AppService.getCollections();
+  const collectionsPromise = AppService.getCollectionsMemo();
+  const categorysPromise = AppService.getCategorysMemo();
+
+  const [
+    { data: hotGames },
+    { data: halloweenGames },
+    { data: newestGames },
+    { data: bestGames },
+    { data: collections },
+    { data: categorys },
+  ] = await Promise.all([
+    hotGamesPromise,
+    halloweenGamesPromise,
+    newestGamesPromise,
+    bestGamesPromise,
+    collectionsPromise,
+    categorysPromise,
+  ]);
   return (
     <div className="p-4">
-      <HomeGameBanner apps={hotGames.data || []} />
+      <GameSwiperList apps={hotGames.data || []} />
       <div className="container mx-auto">
         <BaseSection title="The Collection of the Game">
-          <div className="flex justify-center gap-2 flex-wrap">
-            {collections.map((collection) => {
-              return (
-                <Link href={`/games/collection/${collection}`} className="self-center mb-2">
-                  <span className="border rounded py-2 px-5 flex text-base text-slate-800 bg-purple-200 border-purple-500 hover:border-purple-700 hover:bg-purple-500 hover:text-white">
-                    {collection}
-                  </span>
-                </Link>
-              );
-            })}
-          </div>
+          <GameCollections collections={collections} />
         </BaseSection>
         <BaseSection title="Halloween Games">
-          <GridList linkTarget="_blank" apps={halloweenGamesRest.data || []} />
+          <GridList aspect="aspect-[4/3]" apps={halloweenGames.data || []} />
+        </BaseSection>
+        <BaseSection title="The Collection of the Game">
+          <GameCategorys categorys={categorys} />
         </BaseSection>
         <BaseSection title="Newest Games">
-          <GridBannerList linkTarget="_blank" apps={newestGames.data || []} />
+          <GridList aspect="aspect-[4/3]" apps={newestGames.data || []} />
         </BaseSection>
         <BaseSection title="Best Games">
-          <GridList linkTarget="_blank" apps={bestGames.data || []} />
+          <GridList aspect="aspect-[4/3]" apps={bestGames.data || []} />
         </BaseSection>
       </div>
     </div>

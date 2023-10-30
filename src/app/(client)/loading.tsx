@@ -1,4 +1,4 @@
-import FullLoading from '@/components/base/full-loading';
+import FullLoading from '@/components/base/FullLoading';
 
 export default function () {
   return <FullLoading />;

@@ -1,5 +1,5 @@
 'use client';
-import GridList from '@/components/grid/index';
+import GridList from '@/components/grid/AspectGrid';
 import AppService from '@/services/apps/service';
 import { AppItem } from '@/services/apps/types/AppItem';
 import { AppListRequest } from '@/services/apps/types/ListRequest';

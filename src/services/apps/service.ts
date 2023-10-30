@@ -4,7 +4,6 @@ import { BaseResponse } from '@/types/BaseResponse';
 import { AppItemResponse } from './types/AppItem';
 import { AppListRequest } from './types/ListRequest';
 import { AppListResponse } from './types/ListResponse';
-export const revalidate = 3600;
 enum Pathname {
   List = '/gamehtml5/list',
   GetById = '/gamehtml5/get',

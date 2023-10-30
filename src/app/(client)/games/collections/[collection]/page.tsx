@@ -1,31 +1,31 @@
-import GridList from '@/components/grid/index';
-import ShowMoreButton from '@/components/section/show-more';
+import GridList from '@/components/grid/AspectGrid';
+import ShowMoreButton from '@/components/section/show-more/Index';
 import AppService from '@/services/apps/service';
 import classNames from 'classnames';
 import styles from './index.module.scss';
 
 export async function generateStaticParams() {
-  const categorys = await AppService.getCategorys();
-  return categorys.data.map((category) => {
+  const collections = await AppService.getCollections();
+  return collections.data.map((collection) => {
     return {
-      category,
+      collection,
     };
   });
 }
 
-export default async function CategoryGames({ params }: { params: { category: string } }) {
-  const decodeCategory = decodeURI(params.category);
+export default async function CollectionGames({ params }: { params: { collection: string } }) {
+  const decodeCollection = decodeURI(params.collection);
   const query = {
     pageSize: 24,
     current: 1,
-    category: decodeCategory,
+    collection: decodeCollection,
   };
-  const { data: categoryGames } = await AppService.listMemo(query);
+  const { data: collectionGames } = await AppService.listMemo(query);
   return (
     <>
       <section className="container text-center my-32 mx-auto">
         <h1 className={classNames([styles.title, 'pb-4', 'mb-4', 'font-medium', 'text-slate-700'])}>
-          Play {decodeCategory} Games online
+          Play {decodeCollection} Games online
         </h1>
         <p className="text-lg text-slate-500">
           Enjoy a lag-free and high-quality gaming experience while playing games online with
@@ -34,16 +34,16 @@ export default async function CategoryGames({ params }: { params: { category: st
       </section>
 
       <section className="container mx-auto mb-8">
-        <GridList linkTarget="_blank" apps={categoryGames.data || []} />
+        <GridList linkTarget="_blank" apps={collectionGames.data || []} />
       </section>
       <section className="container mx-auto text-center">
         <ShowMoreButton
           ghost={false}
-          total={categoryGames.total}
+          total={collectionGames.total}
           query={query}
-          num={categoryGames.data?.length}
+          num={collectionGames.data?.length}
         >
-          Show {decodeCategory} More Games
+          Show {decodeCollection} More Games
         </ShowMoreButton>
       </section>
     </>

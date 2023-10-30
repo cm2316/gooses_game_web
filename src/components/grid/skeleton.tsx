@@ -1,6 +1,6 @@
 'use client';
 import { Card, Col, Row, Skeleton } from 'antd';
-import Placeholder from '../base/placeholder';
+import Placeholder from '../base/Placeholder';
 export interface AppGridSkeletonProps {
   count: number;
 }
