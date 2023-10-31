@@ -1,7 +1,7 @@
 'use client';
 import { ShareAltOutlined } from '@ant-design/icons';
 import { FloatButton } from 'antd';
-import { useMemo } from 'react';
+import { usePathname } from 'next/navigation';
 import {
   FacebookIcon,
   FacebookShareButton,
@@ -14,32 +14,29 @@ import {
 } from 'react-share';
 import './share-buttons.scss';
 export default function ShareButton() {
-  const url = useMemo<string>(() => {
-    if (typeof window !== 'undefined') {
-      return `https://www.game520.online${window.location.pathname || '/'}`;
-    }
-    return '/';
-  }, []);
+  const pathname = usePathname();
+  const url = `https://www.game520.online${pathname || '/'}`;
+  console.log(url);
   return (
     <>
       <FloatButton.Group
-        trigger="hover"
+        trigger="click"
         type="primary"
         style={{ bottom: 100 }}
         icon={<ShareAltOutlined />}
         className="share-buttons--container"
       >
         <LinkedinShareButton url={url}>
-          <FloatButton icon={<LinkedinIcon size={32} round />} />
+          <FloatButton icon={<LinkedinIcon size={40} round />} />
         </LinkedinShareButton>
         <TwitterShareButton url={url}>
-          <FloatButton icon={<TwitterIcon size={32} round />} />
+          <FloatButton icon={<TwitterIcon size={40} round />} />
         </TwitterShareButton>
         <RedditShareButton url={url}>
-          <FloatButton icon={<RedditIcon size={32} round />} />
+          <FloatButton icon={<RedditIcon size={40} round />} />
         </RedditShareButton>
         <FacebookShareButton url={url}>
-          <FloatButton icon={<FacebookIcon size={32} round />} />
+          <FloatButton icon={<FacebookIcon size={40} round />} />
         </FacebookShareButton>
       </FloatButton.Group>
       <FloatButton.BackTop />

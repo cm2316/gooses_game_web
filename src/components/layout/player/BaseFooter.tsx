@@ -7,7 +7,7 @@ export default function BaseFooter() {
     document.getElementById('PlayerContainer'),
   );
   return (
-    <div className="flex justify-end items-center px-6 py-2 opacity-80">
+    <div className="flex justify-end items-center px-6 py-2 h-16 bg-white/90">
       <Tooltip title="Click Fullscreen Player">
         <Button
           type="text"

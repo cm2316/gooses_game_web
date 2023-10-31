@@ -1,5 +1,7 @@
+import BaseFooter from '@/components/layout/player/BaseFooter';
 import AppService from '@/services/apps/service';
 import { Metadata } from 'next';
+import Player from './components/Player';
 interface Props {
   params: { gameId: string };
 }
@@ -17,12 +19,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default async function Player({ params }: Props) {
+export default async function PlayerWrap({ params }: Props) {
   const { gameId } = params;
   const { data: appItem } = await AppService.getByIdMemo(gameId);
   return (
     <div
-      className="h-full flex justify-center bg-slate-950 opacity-90"
+      className="h-full bg-slate-950/20 overflow-hidden"
       style={{
         backgroundImage: `url(${appItem.thumb})`,
         backgroundRepeat: 'no-repeat',
@@ -30,15 +32,8 @@ export default async function Player({ params }: Props) {
         backgroundPosition: 'center center',
       }}
     >
-      <div style={{ aspectRatio: `${appItem.width / appItem.height}` }} className="h-full">
-        <iframe
-          allow="clipboard-write"
-          src={appItem.url}
-          allowFullScreen={true}
-          height={'100%'}
-          width={'100%'}
-        ></iframe>
-      </div>
+      <Player app={appItem} />
+      <BaseFooter />
     </div>
   );
 }

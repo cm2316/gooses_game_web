@@ -2,4 +2,16 @@
   .ant-float-btn-icon {
     width: auto !important;
   }
+  .ant-float-btn-group-wrap {
+    .ant-float-btn-body {
+      background-color: transparent !important;
+      transform: transform 0.2s ease-in-out;
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+  .ant-float-btn-content {
+    padding: 0 !important;
+  }
 }
