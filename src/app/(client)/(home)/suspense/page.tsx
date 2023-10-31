@@ -14,7 +14,7 @@ export default async function Home() {
   const newestGamesPromise = AppService.listMemo({ pageSize: 12, collection: 'Newest' });
   const bestGamesPromise = AppService.listMemo({
     pageSize: 48,
-    collection: 'Best Games',
+    collection: 'Best',
   });
 
   return (
