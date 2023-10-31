@@ -4,7 +4,7 @@ import styles from './index.module.scss';
 export interface BaseSectionProps {
   title: string;
   children: ReactNode;
-  className?: classNames.ArgumentArray;
+  className?: classNames.Argument;
 }
 export default function BaseSection(props: BaseSectionProps) {
   return (
@@ -17,7 +17,7 @@ export default function BaseSection(props: BaseSectionProps) {
       >
         {props.title}
       </h2>
-      <section>{props.children}</section>
+      <div>{props.children}</div>
     </section>
   );
 }

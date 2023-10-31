@@ -1,17 +1,18 @@
-import GridList from '@/components/grid/AspectGrid';
-import ShowMoreButton from '@/components/section/show-more/Index';
+import GameCollectionsPromise from '@/app/(client)/(home)/components/GameCollectionsPromise';
+import GameGridListPromise from '@/app/(client)/(home)/components/GameGridListPromise';
+import GridListHasMore from '@/components/grid/AspectGridHasMore';
 import AppService from '@/services/apps/service';
 import classNames from 'classnames';
 import styles from './index.module.scss';
 
-// export async function generateStaticParams() {
-//   const collections = await AppService.getCollectionsMemo();
-//   return collections.data.map((collection) => {
-//     return {
-//       collection,
-//     };
-//   });
-// }
+export async function generateStaticParams() {
+  const collections = await AppService.getCollectionsMemo();
+  return collections.data.map((collection) => {
+    return {
+      collection,
+    };
+  });
+}
 
 export default async function CollectionGames({ params }: { params: { collection: string } }) {
   const decodeCollection = decodeURI(params.collection);
@@ -20,7 +21,13 @@ export default async function CollectionGames({ params }: { params: { collection
     current: 1,
     collection: decodeCollection,
   };
+  const exclesiveGamesPromise = AppService.listMemo({
+    pageSize: 6,
+    collection: 'Exclusive',
+  });
   const { data: collectionGames } = await AppService.listMemo(query);
+  const games = collectionGames.data || [];
+  const total = collectionGames.total || 0;
   return (
     <>
       <section className="container text-center my-32 mx-auto">
@@ -28,24 +35,28 @@ export default async function CollectionGames({ params }: { params: { collection
           Play {decodeCollection} Games online
         </h1>
         <p className="text-lg text-slate-500">
-          Enjoy a lag-free and high-quality gaming experience while playing games online with
-          game520.online
+          Enjoy a lag-free and high-quality gaming experience while playing games online
         </p>
       </section>
 
       <section className="container mx-auto mb-8">
-        <GridList linkTarget="_blank" apps={collectionGames.data || []} />
-      </section>
-      <section className="container mx-auto text-center">
-        <ShowMoreButton
-          ghost={false}
-          total={collectionGames.total}
+        <GridListHasMore
+          games={games}
+          showMoreInit={games.length < total}
           query={query}
-          num={collectionGames.data?.length}
-        >
-          Show {decodeCollection} More Games
-        </ShowMoreButton>
+          showMoreText={`Show More ${decodeCollection} Games`}
+        />
       </section>
+      <GameCollectionsPromise title="Explore More Collections" className="container mx-auto mb-8" />
+      {decodeCollection === 'Exclusive' ? null : (
+        <GameGridListPromise
+          className="container mx-auto mb-8"
+          skeletonCount={6}
+          title="Exclesive Games"
+          promise={exclesiveGamesPromise}
+          aspect="aspect-[4/3]"
+        />
+      )}
     </>
   );
 }

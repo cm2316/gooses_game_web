@@ -1,5 +1,6 @@
-import GridList from '@/components/grid/AspectGrid';
-import ShowMoreButton from '@/components/section/show-more/Index';
+import GameCategorysPromise from '@/app/(client)/(home)/components/GameCategorysPromise';
+import GameGridListPromise from '@/app/(client)/(home)/components/GameGridListPromise';
+import GridListHasMore from '@/components/grid/AspectGridHasMore';
 import AppService from '@/services/apps/service';
 import classNames from 'classnames';
 import styles from './index.module.scss';
@@ -20,7 +21,13 @@ export default async function CategoryGames({ params }: { params: { category: st
     current: 1,
     category: decodeCategory,
   };
+  const mostPopularGamesPromise = AppService.listMemo({
+    pageSize: 6,
+    collection: 'Most Popular',
+  });
   const { data: categoryGames } = await AppService.listMemo(query);
+  const games = categoryGames.data || [];
+  const total = categoryGames.total || 0;
   return (
     <>
       <section className="container text-center my-32 mx-auto">
@@ -28,24 +35,26 @@ export default async function CategoryGames({ params }: { params: { category: st
           Play {decodeCategory} Games online
         </h1>
         <p className="text-lg text-slate-500">
-          Enjoy a lag-free and high-quality gaming experience while playing games online with
-          game520.online
+          Enjoy a lag-free and high-quality gaming experience while playing games online
         </p>
       </section>
 
       <section className="container mx-auto mb-8">
-        <GridList linkTarget="_blank" apps={categoryGames.data || []} />
-      </section>
-      <section className="container mx-auto text-center">
-        <ShowMoreButton
-          ghost={false}
-          total={categoryGames.total}
+        <GridListHasMore
+          games={games}
+          showMoreInit={games.length < total}
           query={query}
-          num={categoryGames.data?.length}
-        >
-          Show {decodeCategory} More Games
-        </ShowMoreButton>
+          showMoreText={`Show More ${decodeCategory} Games`}
+        />
       </section>
+      <GameCategorysPromise title="Explore More Categories" className="container mx-auto mb-8" />
+      <GameGridListPromise
+        className="container mx-auto mb-8"
+        skeletonCount={6}
+        title="Most Popular Games"
+        promise={mostPopularGamesPromise}
+        aspect="aspect-[4/3]"
+      />
     </>
   );
 }

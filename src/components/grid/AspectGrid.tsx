@@ -28,7 +28,7 @@ export default function AspectGrid({ apps, ...props }: AspectGridProps) {
                 </div>
                 <div className="text-slate-700 py-2">
                   <h3 className="truncate text-base w-full font-medium">{app.title}</h3>
-                  <span className="text-sm">{app.category}</span>
+                  {/* <span className="text-sm">{app.category}</span> */}
                 </div>
               </div>
             </Link>

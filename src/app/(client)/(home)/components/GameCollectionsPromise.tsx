@@ -5,7 +5,7 @@ import { Suspense } from 'react';
 import GameCollections from './collections/ListPromise';
 import CollectionSkeleton from './collections/Skeleton';
 interface GameCollectionsPromiseProps {
-  className?: classNames.ArgumentArray;
+  className?: classNames.Argument;
   title: string;
 }
 export default function GameCollectionsPromise({ className, title }: GameCollectionsPromiseProps) {

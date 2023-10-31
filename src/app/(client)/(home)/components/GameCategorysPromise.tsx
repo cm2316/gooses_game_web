@@ -5,7 +5,7 @@ import { Suspense } from 'react';
 import GameCategorys from './categorys/ListPromise';
 import Categoryskeleton from './categorys/Skeleton';
 interface GameCategorysPromiseProps {
-  className?: classNames.ArgumentArray;
+  className?: classNames.Argument;
   title: string;
 }
 export default function GameCategoryssPromise({ className, title }: GameCategorysPromiseProps) {

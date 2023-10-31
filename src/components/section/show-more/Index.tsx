@@ -43,7 +43,7 @@ export default function ShowMoreButton({
     <>
       {apps.length > 0 ? (
         <section className="container mx-auto">
-          <GridList linkTarget="_blank" apps={apps} />
+          <GridList apps={apps} />
         </section>
       ) : null}
       {showMoreButton ? (
