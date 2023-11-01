@@ -20,7 +20,7 @@ export default function ShareButton() {
   return (
     <>
       <FloatButton.Group
-        trigger="click"
+        trigger="hover"
         type="primary"
         style={{ bottom: 100 }}
         icon={<ShareAltOutlined />}
