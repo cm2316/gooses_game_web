@@ -10,7 +10,7 @@ export default function Player({ app }: PLayerProps) {
         aspectRatio: `${app.width / app.height}`,
         height: `calc(100% - 64px)`,
       }}
-      className="h-full max-w-full mx-auto overflow-hidden"
+      className="h-full max-w-full mx-auto max-md:w-full max-md:aspect-auto"
     >
       <iframe
         id="PlayerContainer"
