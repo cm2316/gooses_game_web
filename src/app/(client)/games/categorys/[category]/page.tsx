@@ -30,7 +30,7 @@ export default async function CategoryGames({ params }: { params: { category: st
   const total = categoryGames.total || 0;
   return (
     <>
-      <section className="container text-center my-32 mx-auto">
+      <section className="container text-center my-32">
         <h1 className={classNames([styles.title, 'pb-4', 'mb-4', 'font-medium', 'text-slate-700'])}>
           Play {decodeCategory} Games online
         </h1>
@@ -39,7 +39,7 @@ export default async function CategoryGames({ params }: { params: { category: st
         </p>
       </section>
 
-      <section className="container mx-auto mb-8">
+      <section className="container mb-8">
         <GridListHasMore
           games={games}
           showMoreInit={games.length < total}
@@ -47,9 +47,9 @@ export default async function CategoryGames({ params }: { params: { category: st
           showMoreText={`Show More ${decodeCategory} Games`}
         />
       </section>
-      <GameCategorysPromise title="Explore More Categories" className="container mx-auto mb-8" />
+      <GameCategorysPromise title="Explore More Categories" className="containe mb-8" />
       <GameGridListPromise
-        className="container mx-auto mb-8"
+        className="container mb-8"
         skeletonCount={6}
         title="Most Popular Games"
         promise={mostPopularGamesPromise}

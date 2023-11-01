@@ -46,7 +46,7 @@ export default async function Home() {
   return (
     <div className="p-4">
       <GameSwiperList apps={hotGames.data || []} />
-      <div className="container mx-auto">
+      <div className="container">
         <BaseSection title="Mobile Games">
           <GridList aspect="aspect-square" apps={mobileGames.data || []} />
         </BaseSection>

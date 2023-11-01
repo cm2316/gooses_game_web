@@ -30,7 +30,7 @@ export default async function CollectionGames({ params }: { params: { collection
   const total = collectionGames.total || 0;
   return (
     <>
-      <section className="container text-center my-32 mx-auto">
+      <section className="container text-center my-32">
         <h1 className={classNames([styles.title, 'pb-4', 'mb-4', 'font-medium', 'text-slate-700'])}>
           Play {decodeCollection} Games online
         </h1>
@@ -39,7 +39,7 @@ export default async function CollectionGames({ params }: { params: { collection
         </p>
       </section>
 
-      <section className="container mx-auto mb-8">
+      <section className="container mb-8">
         <GridListHasMore
           games={games}
           showMoreInit={games.length < total}
@@ -47,10 +47,10 @@ export default async function CollectionGames({ params }: { params: { collection
           showMoreText={`Show More ${decodeCollection} Games`}
         />
       </section>
-      <GameCollectionsPromise title="Explore More Collections" className="container mx-auto mb-8" />
+      <GameCollectionsPromise title="Explore More Collections" className="container mb-8" />
       {decodeCollection === 'Exclusive' ? null : (
         <GameGridListPromise
-          className="container mx-auto mb-8"
+          className="container mb-8"
           skeletonCount={6}
           title="Exclesive Games"
           promise={exclesiveGamesPromise}

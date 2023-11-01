@@ -5,7 +5,7 @@ import Link from 'next/link';
 export default async function BaseFooter() {
   const { data: categorys } = await AppService.getCategorysMemo();
   return (
-    <footer className="container mx-auto text-center py-6">
+    <footer className="container text-center py-6">
       <div className="flex flex-col gap-4">
         <div className="flex flex-col gap-3">
           <span className="text-slate-700 text-left font-bold text-base">GAMES</span>
