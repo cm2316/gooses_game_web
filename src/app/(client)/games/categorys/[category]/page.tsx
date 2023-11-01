@@ -5,14 +5,14 @@ import AppService from '@/services/apps/service';
 import classNames from 'classnames';
 import styles from './index.module.scss';
 
-// export async function generateStaticParams() {
-//   const categorys = await AppService.getCategorysMemo();
-//   return categorys.data.map((category) => {
-//     return {
-//       category,
-//     };
-//   });
-// }
+export async function generateStaticParams() {
+  const categorys = await AppService.getCategorysMemo();
+  return categorys.data.map((category) => {
+    return {
+      category,
+    };
+  });
+}
 
 export default async function CategoryGames({ params }: { params: { category: string } }) {
   const decodeCategory = decodeURI(params.category);

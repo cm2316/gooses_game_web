@@ -24,7 +24,7 @@ export default async function PlayerWrap({ params }: Props) {
   const { data: appItem } = await AppService.getByIdMemo(gameId);
   return (
     <div
-      className="h-full bg-slate-950/20 overflow-hidden"
+      className="overflow-hidden absolute top-16 w-full bottom-0"
       style={{
         backgroundImage: `url(${appItem.thumb})`,
         backgroundRepeat: 'no-repeat',
@@ -33,7 +33,7 @@ export default async function PlayerWrap({ params }: Props) {
       }}
     >
       <Player app={appItem} />
-      <BaseFooter />
+      <BaseFooter app={appItem} />
     </div>
   );
 }
