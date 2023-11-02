@@ -11,10 +11,10 @@ export default async function BaseFooter() {
         <div className="flex flex-col gap-3">
           <span className="text-slate-700 text-left font-bold text-base">GAMES</span>
           <ul className="flex gap-2 flex-wrap">
-            {categorys.map((category) => {
+            {categorys.map((category, index) => {
               return (
                 <li className="mb-2" key={category}>
-                  <Link href={`/games/categorys/${category}`} prefetch={false}>
+                  <Link href={`/games/categorys/${category}`} prefetch={index === 0}>
                     <span className="border rounded px-2 py-1 text-slate-500 hover:text-purple-500">
                       {category}
                     </span>

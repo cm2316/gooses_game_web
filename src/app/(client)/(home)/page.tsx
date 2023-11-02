@@ -7,7 +7,7 @@ import GameSwiperList from './components/swiper/List';
 
 export const revalidate = 3600;
 export default async function Home() {
-  const hotGamesPromise = AppService.listMemo({ pageSize: 6, collection: 'Hot', from: 1 });
+  const hotGamesPromise = AppService.listMemo({ pageSize: 12, from: 3 });
   const mobileGamesPromise = AppService.listMemo({
     pageSize: 12,
     collection: 'Hot',

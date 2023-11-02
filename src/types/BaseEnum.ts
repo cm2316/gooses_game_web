@@ -5,6 +5,7 @@ export enum GameType {
 export enum GameSource {
   Distribution = 1,
   Monetise = 2,
+  Pix = 3,
 }
 
 export enum BaseStatus {

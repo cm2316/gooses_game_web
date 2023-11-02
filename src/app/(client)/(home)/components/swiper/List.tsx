@@ -4,7 +4,6 @@ import { LeftOutlined, RightOutlined } from '@ant-design/icons';
 import { Button, Divider, Space } from 'antd';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import { Autoplay, Navigation } from 'swiper/modules';
@@ -14,11 +13,7 @@ export interface GameBannerSwiperProps {
 }
 
 function AppSlider({ app }: { app: AppItem }) {
-  const router = useRouter();
-  function goPlay() {
-    router.push(`/player/${app.id}`);
-  }
-  const tile = app.tile || app.asset[app.asset.length - 1];
+  const tile = app.thumb || app.asset[app.asset.length - 1];
   const icon = app.icon || app.asset[1];
   return (
     <div
@@ -43,9 +38,11 @@ function AppSlider({ app }: { app: AppItem }) {
                 );
               })}
             </Space>
-            <Button type="primary" size="large" onClick={goPlay} className="w-40">
-              Play Now
-            </Button>
+            <Link href={`/player/${app.id}`}>
+              <Button type="primary" size="large" className="w-40">
+                Play Now
+              </Button>
+            </Link>
           </div>
         </div>
       </div>

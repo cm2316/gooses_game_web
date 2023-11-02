@@ -19,7 +19,12 @@ const nextConfig = {
   },
   poweredByHeader: false,
   images: {
-    domains: ['cdn.game520.online', 'img.gamedistribution.com', 'img.gamemonetize.com'],
+    domains: [
+      'cdn.game520.online',
+      'img.gamedistribution.com',
+      'img.gamemonetize.com',
+      'games.assets.gamepix.com',
+    ],
   },
   output: 'standalone',
 };
