@@ -9,14 +9,6 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
-  compiler: {
-    removeConsole:
-      process.env.NODE_ENV === 'production'
-        ? {
-            exclude: ['error'],
-          }
-        : false,
-  },
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/,
@@ -26,22 +18,7 @@ const nextConfig = {
     return config;
   },
   poweredByHeader: false,
-  // async rewrites() {
-  //   return [
-  //     {
-  //       source: '/api/:path*',
-  //       destination: `https://www.game520.online/api/:path*`,
-  //     },
-  //   ];
-  // },
   images: {
-    // remotePatterns: [
-    //   {
-    //     protocol: 'https',
-    //     hostname: 'cdn.game520.online',
-    //     pathname: '**',
-    //   },
-    // ],
     domains: ['cdn.game520.online', 'img.gamedistribution.com', 'img.gamemonetize.com'],
   },
   output: 'standalone',

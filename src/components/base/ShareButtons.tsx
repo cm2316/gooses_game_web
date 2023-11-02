@@ -16,13 +16,12 @@ import './share-buttons.scss';
 export default function ShareButton() {
   const pathname = usePathname();
   const url = `https://www.game520.online${pathname || '/'}`;
-  console.log(url);
   return (
     <>
       <FloatButton.Group
         trigger="hover"
         type="primary"
-        style={{ bottom: 100 }}
+        style={{ bottom: 100, right: 10 }}
         icon={<ShareAltOutlined />}
         className="share-buttons--container"
       >
@@ -39,7 +38,7 @@ export default function ShareButton() {
           <FloatButton icon={<FacebookIcon size={40} round />} />
         </FacebookShareButton>
       </FloatButton.Group>
-      <FloatButton.BackTop />
+      <FloatButton.BackTop style={{ right: 10 }} />
     </>
   );
 }

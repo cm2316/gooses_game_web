@@ -11,10 +11,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: appItem.title,
     description: appItem.description,
     openGraph: {
-      images: [appItem.icon, appItem.thumb],
+      images: appItem.asset,
     },
     twitter: {
-      images: [appItem.icon, appItem.thumb],
+      images: appItem.asset,
     },
   };
 }
