@@ -4,6 +4,8 @@ import { ExpandOutlined, HomeFilled } from '@ant-design/icons';
 import { useFullscreen } from 'ahooks';
 import { Button, Tooltip } from 'antd';
 import Link from 'next/link';
+import { useEffect } from 'react';
+import { addStore } from '../base/HistoryPlayerGames';
 export interface PLayerProps {
   app: AppItem;
 }
@@ -11,6 +13,9 @@ export default function BaseFooter({ app }: PLayerProps) {
   const [fullscreen, { enterFullscreen }] = useFullscreen(() =>
     document.getElementById('PlayerContainer'),
   );
+  useEffect(() => {
+    addStore(app);
+  }, [app]);
   return (
     <div className="flex justify-between items-center px-3 py-2 h-16 bg-white/90">
       <div className="flex gap-4 items-center">

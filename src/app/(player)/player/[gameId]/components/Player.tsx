@@ -1,5 +1,4 @@
 import { AppItem } from '@/services/apps/types/AppItem';
-
 export interface PLayerProps {
   app: AppItem;
 }

@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import SearchDrawer from './BaseDrawer';
+import HistoryDrawer from './HistoryDrawer';
+import SearchDrawer from './SearchDrawer';
 export default function BaseHeader() {
   return (
     <header className="flex-shrink-0 flex items-center sticky top-0 z-50 h-16 bg-black/80 before:left-0 before:backdrop-blur-xl before:absolute before:w-full before:h-full">
@@ -7,7 +8,10 @@ export default function BaseHeader() {
         <Link href="/">
           <img src="/images/logo-full.png" alt="" className="h-10" />
         </Link>
-        <SearchDrawer />
+        <div className="flex items-center gap-3">
+          <HistoryDrawer />
+          <SearchDrawer />
+        </div>
       </div>
     </header>
   );

@@ -17,7 +17,7 @@ export default function BaseSection(props: BaseSectionProps) {
       >
         {props.title}
       </h2>
-      <div>{props.children}</div>
+      <div className="w-full">{props.children}</div>
     </section>
   );
 }

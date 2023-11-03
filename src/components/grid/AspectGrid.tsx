@@ -3,18 +3,20 @@ import { FlexLayout, flexLayoutValue } from '@/types/UI/ResponseLayout';
 import { Col, Row } from 'antd';
 import Image from 'next/image';
 import Link from 'next/link';
+import { ReactNode } from 'react';
 interface AspectGridProps extends FlexLayout {
   apps: AppItem[];
+  extraRender?: (app: AppItem, index: number) => ReactNode;
 }
-export default function AspectGrid({ apps, ...props }: AspectGridProps) {
+export default function AspectGrid({ apps, extraRender, ...props }: AspectGridProps) {
   const { gutter, span, aspect } = { ...flexLayoutValue, ...props };
   return (
     <Row gutter={gutter}>
-      {apps.map((app) => {
+      {apps.map((app, index) => {
         return (
           <Col {...span} key={app.id}>
             <Link href={`/player/${app.id}`}>
-              <div className="border p-1 border-transparent rounded-md hover:border-purple-500 hover:shadow-xl shadow-purple-500/50 transition-shadow">
+              <div className="border p-1 border-transparent rounded-md hover:border-purple-500 hover:shadow-xl shadow-purple-500/50 transition-shadow relative">
                 <div className={`w-full relative rounded overflow-hidden ${aspect}`}>
                   <Image
                     placeholder="blur"
@@ -28,8 +30,8 @@ export default function AspectGrid({ apps, ...props }: AspectGridProps) {
                 </div>
                 <div className="text-slate-700 py-2">
                   <h3 className="truncate text-base w-full font-medium">{app.title}</h3>
-                  {/* <span className="text-sm">{app.category}</span> */}
                 </div>
+                {extraRender && extraRender(app, index)}
               </div>
             </Link>
           </Col>

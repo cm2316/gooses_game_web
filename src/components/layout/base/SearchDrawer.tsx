@@ -1,39 +1,33 @@
 'use client';
 import AppGrid from '@/components/grid/InfiniteLoad';
-import { AppItem } from '@/services/apps/types/AppItem';
 import { SearchOutlined } from '@ant-design/icons';
 import { Button, Drawer, Input } from 'antd';
-import { useRouter } from 'next/navigation';
-import { useRef, useState } from 'react';
+import { usePathname } from 'next/navigation';
+import { useEffect, useRef, useState } from 'react';
 
 export default function BaseSearchDrawer() {
   const [loading, setLoading] = useState(false);
-  const [total, setTotal] = useState(-1);
   const appGridRef = useRef<any>();
   const [visible, setVisible] = useState(false);
-  const router = useRouter();
-  function onToggleSearchModal() {
-    setVisible((visible) => !visible);
+  const pathname = usePathname();
+  function onToggleSearchModal(visible: boolean) {
+    setVisible(visible);
   }
   async function onKeyDown(evt: any) {
     if (evt.keyCode === 13 && !loading) {
       const value = evt.target.value;
       if (value) {
         setLoading(true);
-        const { total } = await appGridRef.current?.query({ name: evt.target.value });
+        await appGridRef.current?.query({ name: evt.target.value });
         setLoading(false);
-        setTotal(total);
+      } else {
+        appGridRef.current?.reset();
       }
     }
   }
-  function onLeaveCurrentApp(event: Event, app: AppItem) {
-    if (!window.confirm('')) {
-      event.preventDefault();
-      return;
-    }
-    onToggleSearchModal();
-    router.push(`/player/${app.id}`);
-  }
+  useEffect(() => {
+    onToggleSearchModal(false);
+  }, [pathname]);
   return (
     <>
       <Button
@@ -41,10 +35,9 @@ export default function BaseSearchDrawer() {
         type="primary"
         icon={<SearchOutlined />}
         size="large"
-        onClick={onToggleSearchModal}
+        onClick={() => onToggleSearchModal(true)}
       ></Button>
       <Drawer
-        destroyOnClose
         height={'calc(100% - 64px)'}
         placement="bottom"
         closable={false}
@@ -65,7 +58,6 @@ export default function BaseSearchDrawer() {
               ref={appGridRef}
               immediately={false}
               scrollableTarget={'DrawerSearchContainer'}
-              onClick={onLeaveCurrentApp}
             />
           </div>
         </div>
