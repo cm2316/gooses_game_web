@@ -80,7 +80,11 @@ export default React.forwardRef(function AppGrid(
     if (popularData?.data.total) {
       return (
         <BaseSection title="Most Popular">
-          <GridList aspect="aspect-[4/3]" apps={popularData?.data.data || []} />
+          <GridList
+            aspect="aspect-[4/3]"
+            apps={popularData?.data.data || []}
+            action={(app: AppItem) => `/player/${app.id}`}
+          />
         </BaseSection>
       );
     } else {

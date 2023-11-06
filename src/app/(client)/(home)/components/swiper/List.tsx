@@ -38,7 +38,7 @@ function AppSlider({ app }: { app: AppItem }) {
                 );
               })}
             </Space>
-            <Link href={`/player/${app.id}`}>
+            <Link href={`/games/${app.id}`}>
               <Button type="primary" size="large" className="w-40">
                 Play Now
               </Button>

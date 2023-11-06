@@ -4,18 +4,25 @@ import { Col, Row } from 'antd';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ReactNode } from 'react';
+import { UrlObject } from 'url';
 interface AspectGridProps extends FlexLayout {
   apps: AppItem[];
   extraRender?: (app: AppItem, index: number) => ReactNode;
+  action?: (app: AppItem) => string | UrlObject;
 }
 export default function AspectGrid({ apps, extraRender, ...props }: AspectGridProps) {
-  const { gutter, span, aspect } = { ...flexLayoutValue, ...props };
+  const {
+    gutter,
+    span,
+    aspect,
+    action = (app: AppItem) => `/games/${app.id}`,
+  } = { ...flexLayoutValue, ...props };
   return (
     <Row gutter={gutter}>
       {apps.map((app, index) => {
         return (
           <Col {...span} key={app.id}>
-            <Link href={`/player/${app.id}`}>
+            <Link href={action(app)}>
               <div className="border p-1 border-transparent rounded-md hover:border-purple-500 hover:shadow-xl shadow-purple-500/50 transition-shadow relative">
                 <div className={`w-full relative rounded overflow-hidden ${aspect}`}>
                   <Image

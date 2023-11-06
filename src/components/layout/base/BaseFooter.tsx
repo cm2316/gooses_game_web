@@ -32,6 +32,16 @@ export default async function BaseFooter() {
             <CustomerServiceOutlined /> Contact Us
           </a>
         </li>
+        <li key="privacy">
+          <Link href="/privacy-policy" target="_blank">
+            Privacy Policy
+          </Link>
+        </li>
+        <li key="cookie">
+          <Link href="/cookie-policy" target="_blank">
+            Cookie Policy
+          </Link>
+        </li>
       </ul>
       <p className="text-slate-700">
         © {new Date().getFullYear()} game520.online. All rights reserved.
