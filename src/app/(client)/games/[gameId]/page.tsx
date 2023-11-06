@@ -26,10 +26,10 @@ export default async function Index({ params }: Props) {
       <div
         className="relative"
         style={{
-          backgroundImage: `url(${appItem.thumb})`,
+          backgroundImage: `url(${appItem.tile || appItem.thumb})`,
           backgroundRepeat: 'no-repeat',
           backgroundSize: 'cover',
-          backgroundPosition: 'center center',
+          backgroundPosition: 'center top',
           height: '74vh',
           maxHeight: '468px',
         }}

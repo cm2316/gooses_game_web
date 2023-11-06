@@ -13,7 +13,7 @@ export interface GameBannerSwiperProps {
 }
 
 function AppSlider({ app }: { app: AppItem }) {
-  const tile = app.thumb || app.asset[app.asset.length - 1];
+  const tile = app.tile || app.thumb || app.asset[app.asset.length - 1];
   const icon = app.icon || app.asset[1];
   return (
     <div

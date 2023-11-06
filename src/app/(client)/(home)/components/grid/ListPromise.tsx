@@ -1,4 +1,4 @@
-import GridList from '@/components/grid/AspectGrid';
+import AspectGrid from '@/components/grid/AspectGrid';
 import { AppListResponse } from '@/services/apps/types/ListResponse';
 import { FlexLayout } from '@/types/UI/ResponseLayout';
 export interface GameGridListPromiseProps extends FlexLayout {
@@ -9,5 +9,5 @@ export default async function GameGridListPromise({
   ...flexLayoutValue
 }: GameGridListPromiseProps) {
   const { data: gameList } = await promise;
-  return <GridList apps={gameList.data || []} {...flexLayoutValue} />;
+  return <AspectGrid apps={gameList.data || []} {...flexLayoutValue} />;
 }
