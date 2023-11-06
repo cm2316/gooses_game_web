@@ -3,3 +3,5 @@ export interface BaseResponse<T> {
   errorMessage: string;
   success: boolean;
 }
+
+export interface StringArrayResponse extends BaseResponse<string[]> {}

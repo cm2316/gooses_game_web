@@ -1,6 +1,6 @@
 import request from '@/request';
-import fetcher, { getSearchParams } from '@/request/fetcher';
-import { BaseResponse } from '@/types/BaseResponse';
+import fetcher from '@/request/base-fetcher';
+import { StringArrayResponse } from '@/types/BaseResponse';
 import { AppItemResponse } from './types/AppItem';
 import { AppListRequest } from './types/ListRequest';
 import { AppListResponse } from './types/ListResponse';
@@ -19,9 +19,7 @@ export default class AppService {
   };
 
   static listMemo = async (params?: AppListRequest) => {
-    const res = await fetcher<AppListResponse>(
-      `${process.env.NEXT_PUBLIC_API_DOMAIN}${Pathname.List}?${getSearchParams(params as any)}`,
-    );
+    const res = await fetcher<AppListResponse>({ url: Pathname.List, params });
     return res;
   };
 
@@ -33,35 +31,29 @@ export default class AppService {
   };
 
   static getByIdMemo = async (id: string) => {
-    const res = await fetcher<AppItemResponse>(
-      `${process.env.NEXT_PUBLIC_API_DOMAIN}${Pathname.GetById}?${getSearchParams({ id })}`,
-    );
+    const res = await fetcher<AppItemResponse>({ url: Pathname.GetById, params: { id } });
     return res;
   };
 
-  static getCollections = async (): Promise<BaseResponse<string[]>> => {
+  static getCollections = async (): Promise<StringArrayResponse> => {
     return request({
       url: Pathname.Collections,
     });
   };
 
   static getCollectionsMemo = async () => {
-    const res = await fetcher<BaseResponse<string[]>>(
-      `${process.env.NEXT_PUBLIC_API_DOMAIN}${Pathname.Collections}`,
-    );
+    const res = await fetcher<StringArrayResponse>({ url: Pathname.Collections });
     return res;
   };
 
-  static getCategorys = async (): Promise<BaseResponse<string[]>> => {
+  static getCategorys = async (): Promise<StringArrayResponse> => {
     return request({
       url: Pathname.Categorys,
     });
   };
 
   static getCategorysMemo = async () => {
-    const res = await fetcher<BaseResponse<string[]>>(
-      `${process.env.NEXT_PUBLIC_API_DOMAIN}${Pathname.Categorys}`,
-    );
+    const res = await fetcher<StringArrayResponse>({ url: Pathname.Categorys });
     return res;
   };
 }

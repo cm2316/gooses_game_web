@@ -20,7 +20,7 @@ export default function GameGridPromise({
 }: GameGridPromiseProps) {
   return (
     <BaseSection title={title} className={className}>
-      <Suspense fallback={<GridSkeleton count={skeletonCount} />}>
+      <Suspense fallback={<GridSkeleton count={skeletonCount} {...flexLayoutValue} />}>
         <GameGridList promise={promise} {...flexLayoutValue} />
       </Suspense>
     </BaseSection>
