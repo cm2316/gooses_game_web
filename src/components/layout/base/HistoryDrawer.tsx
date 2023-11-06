@@ -36,7 +36,7 @@ export default function HistoryDrawer() {
     return (
       <div
         onClick={(evt) => evt.preventDefault()}
-        className="absolute w-full left-0 top-0 h-full flex justify-center items-center gap-2 bg-black/10 rounded-md app-mask"
+        className="absolute w-full left-0 top-0 h-full flex justify-center items-center gap-2 hover:bg-black/20 rounded-md app-mask"
       >
         <Button
           danger

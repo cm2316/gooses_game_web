@@ -1,11 +1,25 @@
 import AppService from '@/services/apps/service';
 import { Button, Divider, Space } from 'antd';
+import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import GameGridListPromise from '../../(home)/components/GameGridListPromise';
 interface Props {
   params: {
     gameId: string;
+  };
+}
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { data: appItem } = await AppService.getByIdMemo(params.gameId);
+  return {
+    title: appItem.title,
+    description: appItem.description,
+    openGraph: {
+      images: appItem.asset,
+    },
+    twitter: {
+      images: appItem.asset,
+    },
   };
 }
 export default async function Index({ params }: Props) {
