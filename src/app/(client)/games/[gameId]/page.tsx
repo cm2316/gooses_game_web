@@ -52,7 +52,7 @@ export default async function Index({ params }: Props) {
           className="absolute w-full h-full top-0 left-0"
           style={{
             background:
-              'linear-gradient(rgba(0, 0, 0, 0.4) 30%, rgba(0, 0, 0, 0.6) 55%, rgba(0, 0, 0, 0.9) 100%)',
+              'linear-gradient(rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0.4) 55%, rgba(0, 0, 0, 0.8) 100%)',
           }}
         ></div>
         <div className="absolute w-full bottom-0 mb-12 px-8">
@@ -76,7 +76,7 @@ export default async function Index({ params }: Props) {
                     );
                   })}
                 </Space>
-                <div className="flex gap-2 items-center">
+                <div className="flex gap-2 flex-wrap items-center">
                   <Link href={`/player/${appItem.id}`}>
                     <Button type="primary" size="large">
                       Play in browser

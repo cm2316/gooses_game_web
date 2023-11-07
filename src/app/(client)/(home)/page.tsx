@@ -6,11 +6,16 @@ import GameCollections from './components/collections/List';
 import GameSwiperList from './components/swiper/List';
 
 export default async function Home() {
-  const hotGamesPromise = AppService.listMemo({ pageSize: 12, from: 3 });
+  const popularGamesPromise = AppService.listMemo({
+    pageSize: 12,
+    collection: 'Most Popular',
+    mobile: 1,
+  });
   const mobileGamesPromise = AppService.listMemo({
     pageSize: 12,
     collection: 'Hot',
     mobile: 1,
+    from: 1,
   });
   const halloweenGamesPromise = AppService.listMemo({
     pageSize: 12,
@@ -26,7 +31,7 @@ export default async function Home() {
   const categorysPromise = AppService.getCategorysMemo();
 
   const [
-    { data: hotGames },
+    { data: popularGames },
     { data: mobileGames },
     { data: halloweenGames },
     { data: newestGames },
@@ -34,7 +39,7 @@ export default async function Home() {
     { data: collections },
     { data: categorys },
   ] = await Promise.all([
-    hotGamesPromise,
+    popularGamesPromise,
     mobileGamesPromise,
     halloweenGamesPromise,
     newestGamesPromise,
@@ -44,7 +49,7 @@ export default async function Home() {
   ]);
   return (
     <div className="p-4">
-      <GameSwiperList apps={hotGames.data || []} />
+      <GameSwiperList apps={popularGames.data || []} />
       <div className="container">
         <BaseSection title="Mobile Games">
           <GridList aspect="aspect-square" apps={mobileGames.data || []} />

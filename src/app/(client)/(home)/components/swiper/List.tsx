@@ -1,4 +1,5 @@
 'use client';
+import { Logo_Base64 } from '@/components/constant';
 import { AppItem } from '@/services/apps/types/AppItem';
 import { LeftOutlined, RightOutlined } from '@ant-design/icons';
 import { Button, Divider, Space } from 'antd';
@@ -17,12 +18,20 @@ function AppSlider({ app }: { app: AppItem }) {
   const icon = app.icon || app.asset[1];
   return (
     <div
-      className="h-96 rounded-lg bg-no-repeat bg-cover overflow-hidden bg-center"
+      className="h-96 rounded-lg bg-no-repeat bg-cover overflow-hidden bg-top"
       style={{ backgroundImage: `url(${tile})` }}
     >
-      <div className="h-full flex items-end p-9 bg-gradient-to-t from-black/90 from-0% via-black/20 via-40% to-black/0 to-50%">
+      <div className="h-full flex items-end p-9 bg-gradient-to-t from-black/90 from-0% via-black/40 via-40% to-black/0 to-70%">
         <div className="flex gap-8 text-slate-100">
-          <Image src={icon} width={150} height={150} alt="" className="rounded hidden sm:block" />
+          <Image
+            placeholder="blur"
+            blurDataURL={Logo_Base64}
+            src={icon}
+            width={150}
+            height={150}
+            alt=""
+            className="rounded hidden sm:block"
+          />
           <div className="flex flex-col gap-2 justify-end items-start">
             <h1 className="text-2xl font-medium">{app.title}</h1>
             <Space size={0} split={<Divider type="vertical" className="bg-white/70" />}>

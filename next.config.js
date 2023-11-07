@@ -23,6 +23,7 @@ const nextConfig = {
       'img.gamemonetize.com',
       'games.assets.gamepix.com',
     ],
+    unoptimized: true,
   },
   output: 'standalone',
 };
