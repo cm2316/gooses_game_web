@@ -86,11 +86,11 @@ export default function GameBannerSwiper(props: GameBannerSwiperProps) {
           );
         })}
       </Swiper>
-      <div className="absolute top-1/2 -translate-y-1/2 w-full hidden sm:flex justify-between items-center z-10 px-8">
-        <span className="game-banner--prev text-purple-400 hover:text-white cursor-pointer flex justify-center items-center w-12 h-12 rounded-full border border-purple-400 bg-purple-200 hover:bg-purple-500 hover:border-purple-800">
+      <div className="absolute top-1/2 -translate-y-1/2 inset-x-8 invisible sm:visible flex-between z-10">
+        <span className="game-banner--prev text-purple-400 hover:text-white cursor-pointer flex-center w-12 h-12 rounded-full border border-purple-400 bg-purple-200 hover:bg-purple-500 hover:border-purple-800">
           <LeftOutlined />
         </span>
-        <span className="game-banner--next text-purple-400 hover:text-white cursor-pointer flex justify-center items-center w-12 h-12 rounded-full border border-purple-400 bg-purple-200 hover:bg-purple-500 hover:border-purple-800">
+        <span className="game-banner--next text-purple-400 hover:text-white cursor-pointer flex-center w-12 h-12 rounded-full border border-purple-400 bg-purple-200 hover:bg-purple-500 hover:border-purple-800">
           <RightOutlined />
         </span>
       </div>

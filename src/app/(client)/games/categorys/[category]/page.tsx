@@ -1,9 +1,9 @@
 import GameCategorysPromise from '@/app/(client)/(home)/components/GameCategorysPromise';
 import GameGridListPromise from '@/app/(client)/(home)/components/GameGridListPromise';
+import styles from '@/app/(client)/games/collections/[collection]/index.module.scss';
 import GridListHasMore from '@/components/grid/AspectGridHasMore';
 import AppService from '@/services/apps/service';
 import classNames from 'classnames';
-import styles from './index.module.scss';
 
 export async function generateStaticParams() {
   const categorys = await AppService.getCategorysMemo();

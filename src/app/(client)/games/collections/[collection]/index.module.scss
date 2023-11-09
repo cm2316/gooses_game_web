@@ -1,7 +1,6 @@
 .title {
-  border-bottom: 2px solid transparent;
-  border-image: linear-gradient(0.25turn, rgba(56, 2, 155, 0), #722ed1, rgba(56, 2, 155, 0)) 1 / 1 / 0 stretch;
-  font-size: 54px;
-  line-height: 150%;
-  display: inline-block;
+  @apply after:absolute relative text-5xl/[150%];
+  &::after {
+    @apply bg-gradient-to-r from-purple-700/0 from-0% via-purple-700 via-50% to-purple-700/0 to-100% bottom-0 h-[2px] w-full left-0;
+  }
 }

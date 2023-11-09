@@ -57,7 +57,7 @@ export default function BaseSearchDrawer() {
             <AppGrid
               ref={appGridRef}
               immediately={false}
-              scrollableTarget={'DrawerSearchContainer'}
+              scrollableTarget="DrawerSearchContainer"
             />
           </div>
         </div>

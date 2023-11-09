@@ -7,7 +7,6 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { getStore, removeStore } from './HistoryPlayerGames';
-import './history-drawer.scss';
 export default function HistoryDrawer() {
   const [visible, setVisible] = useState(false);
   const [apps, setApps] = useState<AppItem[]>([]);
@@ -36,19 +35,21 @@ export default function HistoryDrawer() {
     return (
       <div
         onClick={(evt) => evt.preventDefault()}
-        className="absolute w-full left-0 top-0 h-full flex justify-center items-center gap-2 hover:bg-black/20 rounded-md app-mask"
+        className="absolute inset-0 flex-center hover:bg-black/20 rounded-md app-mask group"
       >
-        <Button
-          danger
-          size="large"
-          onClick={(evt) => onRemove(evt)}
-          type="primary"
-          shape="circle"
-          icon={<DeleteOutlined />}
-        />
-        <Link href={`/player/${app.id}`}>
-          <Button size="large" type="primary" shape="circle" icon={<PlayCircleOutlined />} />
-        </Link>
+        <div className="invisible group-hover:visible">
+          <Button
+            danger
+            size="large"
+            onClick={(evt) => onRemove(evt)}
+            type="primary"
+            shape="circle"
+            icon={<DeleteOutlined />}
+          />
+          <Link href={`/player/${app.id}`} className="ml-2">
+            <Button size="large" type="primary" shape="circle" icon={<PlayCircleOutlined />} />
+          </Link>
+        </div>
       </div>
     );
   };

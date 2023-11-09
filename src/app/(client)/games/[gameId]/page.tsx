@@ -38,7 +38,7 @@ export default async function Index({ params }: Props) {
   return (
     <div>
       <div
-        className="relative"
+        className="relative flex justify-end flex-col"
         style={{
           backgroundImage: `url(${appItem.tile || appItem.thumb})`,
           backgroundRepeat: 'no-repeat',
@@ -49,13 +49,13 @@ export default async function Index({ params }: Props) {
         }}
       >
         <div
-          className="absolute w-full h-full top-0 left-0"
+          className="absolute inset-0"
           style={{
             background:
               'linear-gradient(rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0.4) 55%, rgba(0, 0, 0, 0.8) 100%)',
           }}
         ></div>
-        <div className="absolute w-full bottom-0 mb-12 px-8">
+        <div className="relative mb-12 px-8">
           <div className="flex flex-col lg:flex-row lg:items-end gap-6">
             <div className="flex flex-col gap-8 sm:flex-row">
               <div className="flex items-end">
@@ -91,9 +91,11 @@ export default async function Index({ params }: Props) {
                 </div>
               </div>
             </div>
-            <div className="flex-col gap-3 flex-1 text-slate-300 hidden sm:flex">
+            <div className="flex-col gap-3 flex-1 text-slate-300 hidden sm:flex group">
               <h2 className="text-base font-medium">{appItem.title} Online in Browser</h2>
-              <p className="text-slate-300">{appItem.description}</p>
+              <p className="text-slate-300 line-clamp-2 group-hover:line-clamp-none">
+                {appItem.description}
+              </p>
             </div>
           </div>
         </div>

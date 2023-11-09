@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 export default function NotFound() {
   return (
-    <div className="flex flex-col justify-center items-center absolute w-full h-full">
+    <div className="flex flex-col justify-center items-center absolute inset-0">
       <NotFoundPage />
       <div className="absolute bottom-0 mb-14">
         <Link href="/">

@@ -24,7 +24,7 @@ export default async function PlayerWrap({ params }: Props) {
   const { data: appItem } = await AppService.getByIdMemo(gameId);
   return (
     <div
-      className="absolute top-16 w-full bottom-0"
+      className="absolute inset-0 top-16"
       style={{
         backgroundImage: `url(${appItem.thumb})`,
         backgroundRepeat: 'no-repeat',

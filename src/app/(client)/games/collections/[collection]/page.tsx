@@ -7,7 +7,7 @@ import styles from './index.module.scss';
 
 export async function generateStaticParams() {
   const collections = await AppService.getCollectionsMemo();
-  return collections.data.map((collection) => {
+  return collections.data.slice(0, 5).map((collection) => {
     return {
       collection,
     };

@@ -17,7 +17,7 @@ export default function BaseFooter({ app }: PLayerProps) {
     addStore(app);
   }, [app]);
   return (
-    <div className="flex justify-between items-center px-3 py-2 h-16 bg-white/90">
+    <div className="flex-between px-3 py-2 h-16 bg-white/90">
       <div className="flex gap-4 items-center">
         <Link href="/">
           <Button shape="round" type="primary" ghost icon={<HomeFilled />}>
