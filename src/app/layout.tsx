@@ -23,9 +23,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <head>
-        <Script
+        {/* <Script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1703856267668034"
+        /> */}
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-6SWQF5EJGC" />
+        <Script
+          dangerouslySetInnerHTML={{
+            __html: `window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-6SWQF5EJGC');`,
+          }}
         />
       </head>
       <body>
@@ -34,6 +43,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
           <ShareButtons />
         </ConfigProvider>
+        {/* <!-- Google Tag Manager (noscript) --> */}
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-WTKX3VJD"
+            height="0"
+            width="0"
+            style={{ display: 'none', visibility: 'hidden' }}
+          ></iframe>
+        </noscript>
+        {/* <!-- End Google Tag Manager (noscript) --> */}
       </body>
     </html>
   );

@@ -1,6 +1,7 @@
 import GridList from '@/components/grid/AspectGrid';
 import BaseSection from '@/components/section/base/Index';
 import AppService from '@/services/apps/service';
+import { GameSource } from '@/types/BaseEnum';
 import GameCategorys from './components/categorys/List';
 import GameCollections from './components/collections/List';
 import GameSwiperList from './components/swiper/List';
@@ -8,23 +9,29 @@ import GameSwiperList from './components/swiper/List';
 export default async function Home() {
   const popularGamesPromise = AppService.listMemo({
     pageSize: 12,
-    collection: 'Most Popular',
-    mobile: 1,
+    collection: 'Newest',
+    from: GameSource.Distribution,
   });
   const mobileGamesPromise = AppService.listMemo({
     pageSize: 12,
-    collection: 'Hot',
-    mobile: 1,
-    from: 1,
+    // collection: 'Hot',
+    // mobile: 1,
+    from: GameSource.Pix,
   });
   const halloweenGamesPromise = AppService.listMemo({
     pageSize: 12,
     collection: 'Halloween',
+    from: GameSource.Distribution,
   });
-  const newestGamesPromise = AppService.listMemo({ pageSize: 12, collection: 'Newest' });
-  const bestGamesPromise = AppService.listMemo({
+  const exclusiveGamesPromise = AppService.listMemo({
+    pageSize: 12,
+    collection: 'Exclusive',
+    from: GameSource.Distribution,
+  });
+  const topPicksGamesPromise = AppService.listMemo({
     pageSize: 48,
-    collection: 'Best',
+    collection: 'Top Picks',
+    from: GameSource.Distribution,
   });
 
   const collectionsPromise = AppService.getCollectionsMemo();
@@ -34,16 +41,16 @@ export default async function Home() {
     { data: popularGames },
     { data: mobileGames },
     { data: halloweenGames },
-    { data: newestGames },
-    { data: bestGames },
+    { data: exclusiveGames },
+    { data: topPicksGames },
     { data: collections },
     { data: categorys },
   ] = await Promise.all([
     popularGamesPromise,
     mobileGamesPromise,
     halloweenGamesPromise,
-    newestGamesPromise,
-    bestGamesPromise,
+    exclusiveGamesPromise,
+    topPicksGamesPromise,
     collectionsPromise,
     categorysPromise,
   ]);
@@ -63,11 +70,11 @@ export default async function Home() {
         <BaseSection title="Explore by Category">
           <GameCategorys categorys={categorys} />
         </BaseSection>
-        <BaseSection title="Newest Games">
-          <GridList aspect="aspect-[4/3]" apps={newestGames.data || []} />
+        <BaseSection title="Exclusive Games">
+          <GridList aspect="aspect-[4/3]" apps={exclusiveGames.data || []} />
         </BaseSection>
-        <BaseSection title="Best Games">
-          <GridList aspect="aspect-[4/3]" apps={bestGames.data || []} />
+        <BaseSection title="Top Picks Games">
+          <GridList aspect="aspect-[4/3]" apps={topPicksGames.data || []} />
         </BaseSection>
       </div>
     </div>

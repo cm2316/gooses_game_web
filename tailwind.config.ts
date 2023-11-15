@@ -1,3 +1,4 @@
+const colors = require('tailwindcss/colors');
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
@@ -13,6 +14,9 @@ module.exports = {
         // 512/340
         '128/85': '128 / 85',
         // 1280/720:video
+      },
+      colors: {
+        primary: colors.purple,
       },
     },
   },
