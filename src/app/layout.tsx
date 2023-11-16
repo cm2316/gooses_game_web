@@ -4,6 +4,7 @@ import theme from '@/theme/themeConfig';
 import { ConfigProvider } from 'antd';
 import type { Metadata } from 'next';
 import Script from 'next/script';
+import ProvidersWrapper from './ProviderWrapper';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -43,8 +44,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body>
         <ConfigProvider theme={theme}>
-          <AntdRegistry>{children}</AntdRegistry>
-
+          <AntdRegistry>
+            <ProvidersWrapper>{children}</ProvidersWrapper>
+          </AntdRegistry>
           <ShareButtons />
         </ConfigProvider>
         {/* <!-- Google Tag Manager (noscript) --> */}
