@@ -27,6 +27,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1703856267668034"
         /> */}
+        <meta name="impact-site-verification" value="84072984-8428-4cb4-a1a8-e88a91349cae"></meta>
         <Script
           strategy="lazyOnload"
           src="https://www.googletagmanager.com/gtag/js?id=G-6SWQF5EJGC"
